@@ -1,0 +1,220 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "products": "Produits",
+        "promotions": "Promotions",
+        "about": "A propos",
+        "contact": "Contact",
+        "contactUs": "Nous contacter"
+    },
+    "hero": {
+        "badge": "Plus de 10 ans d'experience a Abidjan",
+        "title": "L'electromenager de qualite a Abidjan",
+        "titleHighlight": "de qualite",
+        "subtitle": "Refrigerateurs, climatiseurs, machines a laver, televisions et bien plus. Promotions jusqu'a 40% chez Saffron Electronics.",
+        "cta": "Voir les produits",
+        "ctaPromo": "Promotions en cours",
+        "stats": {
+            "experience": "Ans d'experience",
+            "products": "Produits disponibles",
+            "discount": "Jusqu'a de remise"
+        },
+        "guarantee": "Garantie constructeur",
+        "openNow": "Ouvert maintenant"
+    },
+    "categories": {
+        "title": "Nos categories",
+        "subtitle": "Decouvrez notre large gamme de produits",
+        "viewAll": "Voir tout",
+        "products": "produits",
+        "product": "produit"
+    },
+    "featured": {
+        "title": "Produits en vedette",
+        "subtitle": "Notre selection de produits incontournables",
+        "viewAll": "Tous les produits",
+        "newTitle": "Nouveautes",
+        "newSubtitle": "Les derniers arrivages dans notre showroom",
+        "viewAllNew": "Toutes les nouveautes"
+    },
+    "promo": {
+        "badge": "Promotion limitee",
+        "discount": "DE REMISE",
+        "viewOffers": "Voir les offres",
+        "endsIn": "Fin de l'offre dans",
+        "days": "Jours",
+        "hours": "Heures",
+        "minutes": "Min",
+        "seconds": "Sec"
+    },
+    "whyUs": {
+        "title": "Pourquoi nous choisir ?",
+        "subtitle": "Saffron Electronics, votre partenaire de confiance depuis plus de 10 ans",
+        "original": {
+            "title": "Produits originaux",
+            "desc": "Tous nos produits sont garantis originaux avec certificat d'authenticite."
+        },
+        "guarantee": {
+            "title": "Garantie constructeur",
+            "desc": "Chaque produit beneficie de la garantie officielle du constructeur."
+        },
+        "promotions": {
+            "title": "Promotions regulieres",
+            "desc": "Des offres exceptionnelles jusqu'a -40% tout au long de l'annee."
+        },
+        "service": {
+            "title": "Service apres vente",
+            "desc": "Notre equipe technique est disponible pour vous accompagner."
+        },
+        "experience": {
+            "title": "10 ans d'experience",
+            "desc": "Une decennie d'expertise au service des foyers ivoiriens."
+        },
+        "delivery": {
+            "title": "Livraison a Abidjan",
+            "desc": "Service de livraison disponible sur toute la ville d'Abidjan."
+        }
+    },
+    "contact": {
+        "title": "Contactez-nous",
+        "subtitle": "Notre equipe est disponible pour vous aider",
+        "coordinates": "Nos coordonnees",
+        "phone": "Telephone",
+        "email": "Email",
+        "address": "Adresse",
+        "hours": "Horaires",
+        "weekdays": "Lundi - Samedi",
+        "sunday": "Dimanche",
+        "facebook": "Facebook",
+        "formTitle": "Envoyez-nous un message",
+        "formSubtitle": "Remplissez le formulaire et nous vous repondrons dans les meilleurs delais.",
+        "name": "Nom complet",
+        "namePlaceholder": "Votre nom",
+        "emailPlaceholder": "votre@email.com",
+        "phonePlaceholder": "+225 07 00 00 00 00",
+        "subject": "Sujet",
+        "subjectPlaceholder": "Sujet de votre message",
+        "message": "Message",
+        "messagePlaceholder": "Decrivez votre demande...",
+        "send": "Envoyer le message",
+        "successTitle": "Message envoye !",
+        "successMsg": "Votre message a ete recu. Nous vous repondrons dans les plus brefs delais.",
+        "callUs": "Appelez-nous",
+        "schedule": "Horaires",
+        "scheduleValue": "Lun-Sam 8h-19h, Dim 9h-19h"
+    },
+    "products": {
+        "title": "Notre catalogue",
+        "loading": "Chargement...",
+        "results": "produits disponibles",
+        "filters": "Filtres",
+        "clearFilters": "Effacer",
+        "categories": "Categories",
+        "all": "Toutes",
+        "options": "Options",
+        "isNew": "Nouveautes",
+        "isPromo": "En promotion",
+        "sortLabel": "Trier par",
+        "sortRecent": "Plus recents",
+        "sortOldest": "Plus anciens",
+        "sortPriceAsc": "Prix croissant",
+        "sortPriceDesc": "Prix decroissant",
+        "noResults": "Aucun produit trouve",
+        "noResultsHint": "Essayez de modifier vos filtres",
+        "search": "Rechercher un produit...",
+        "viewDetail": "Voir le detail",
+        "new": "NOUVEAU",
+        "outOfStock": "Rupture",
+        "lowStock": "Stock faible",
+        "inStock": "EN STOCK",
+        "rupture": "RUPTURE DE STOCK"
+    },
+    "productDetail": {
+        "back": "Retour aux produits",
+        "home": "Accueil",
+        "brand": "Marque",
+        "ref": "Ref",
+        "callOrder": "Appeler pour commander",
+        "whatsapp": "WhatsApp",
+        "guarantee": "Garantie constructeur incluse",
+        "original": "Produit original et certifie",
+        "lowStockMsg": "Seulement {{count}} en stock",
+        "inShowroom": "Disponible en showroom",
+        "description": "Description",
+        "specifications": "Specifications",
+        "noDesc": "Aucune description disponible.",
+        "noSpecs": "Aucune specification disponible.",
+        "related": "Produits similaires",
+        "notFound": "Produit non trouve",
+        "savings": "Vous economisez {{amount}} ({{percent}}%)"
+    },
+    "promotions": {
+        "title": "Promotions en cours",
+        "subtitle": "Jusqu'a -40% sur une selection de produits electromenagers",
+        "badge": "Offres limitees",
+        "campaigns": "Campagnes promotionnelles",
+        "from": "Du",
+        "to": "au",
+        "productsTitle": "Produits en promotion",
+        "noPromo": "Aucune promotion en cours pour le moment.",
+        "endsIn": "Fin de l'offre",
+        "in": "dans"
+    },
+    "about": {
+        "badge": "Notre histoire",
+        "title": "Plus de 10 ans a votre service",
+        "subtitle": "Saffron Electronics est ne de la vision de rendre l'electromenager de qualite accessible a tous les foyers ivoiriens.",
+        "experience": "Annees d'experience",
+        "clients": "Clients satisfaits",
+        "catalog": "Produits en catalogue",
+        "showroom": "Showroom a Abidjan",
+        "whoWeAre": "Qui sommes-nous",
+        "partnerTitle": "Votre partenaire electromenager de confiance",
+        "p1": "Fonde il y a plus de 10 ans, Saffron Electronics s'est impose comme l'une des references incontournables de l'electromenager a Abidjan. Notre showroom, situe au Rond-point de la Riviera Palmeraie pres de la BICICI, accueille quotidiennement des centaines de clients qui nous font confiance.",
+        "p2": "Nous proposons une gamme complete d'appareils electromenagers : refrigerateurs, climatiseurs, machines a laver, televisions, et une large selection de petit electromenager. Tous nos produits sont selectionnes aupres des meilleures marques mondiales et beneficient de la garantie constructeur.",
+        "p3": "Notre engagement : vous offrir les meilleurs produits aux meilleurs prix, avec un service client d'exception. Des promotions regulieres jusqu'a 40% de remise viennent renforcer notre accessibilite.",
+        "yearsExp": "Annees d'expertise",
+        "maxDiscount": "Max de remise",
+        "open": "Ouvert tous les jours",
+        "original": "Produits originaux",
+        "valuesTitle": "Nos valeurs",
+        "valuesSubtitle": "Les principes qui guident chacune de nos actions",
+        "quality": {
+            "title": "Qualite",
+            "desc": "Nous selectionnons uniquement des produits originaux des meilleures marques mondiales, garantissant performance et durabilite."
+        },
+        "trust": {
+            "title": "Confiance",
+            "desc": "Plus d'une decennie de service loyal aux foyers ivoiriens. Notre reputation est fondee sur l'honnetet et la transparence."
+        },
+        "service": {
+            "title": "Service",
+            "desc": "De l'accueil en showroom au service apres-vente, notre equipe est toujours disponible pour vous accompagner."
+        },
+        "price": {
+            "title": "Prix competitifs",
+            "desc": "Nous negocions les meilleurs tarifs pour vous offrir des prix imbattables sans compromis sur la qualite."
+        }
+    },
+    "footer": {
+        "description": "Votre specialiste en electromenager a Abidjan depuis plus de 10 ans. Qualite, service et prix competitifs.",
+        "navigation": "Navigation",
+        "contact": "Contact",
+        "hours": "Horaires",
+        "weekdays": "Lundi - Samedi",
+        "sunday": "Dimanche",
+        "openNow": "Ouvert maintenant",
+        "openUntil": "7j/7 jusqu'a 19h00",
+        "rights": "Tous droits reserves."
+    },
+    "notFound": {
+        "title": "Page introuvable",
+        "subtitle": "La page que vous recherchez n'existe pas ou a ete deplacee.",
+        "home": "Accueil",
+        "back": "Retour"
+    },
+    "language": {
+        "fr": "Francais",
+        "en": "English"
+    }
+}

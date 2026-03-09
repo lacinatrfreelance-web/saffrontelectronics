@@ -1,0 +1,220 @@
+{
+    "nav": {
+        "home": "Home",
+        "products": "Products",
+        "promotions": "Promotions",
+        "about": "About",
+        "contact": "Contact",
+        "contactUs": "Contact us"
+    },
+    "hero": {
+        "badge": "Over 10 years of experience in Abidjan",
+        "title": "Quality home appliances in Abidjan",
+        "titleHighlight": "Quality",
+        "subtitle": "Refrigerators, air conditioners, washing machines, televisions and more. Up to 40% off at Saffron Electronics.",
+        "cta": "View products",
+        "ctaPromo": "Current promotions",
+        "stats": {
+            "experience": "Years of experience",
+            "products": "Products available",
+            "discount": "Up to discount"
+        },
+        "guarantee": "Manufacturer warranty",
+        "openNow": "Open now"
+    },
+    "categories": {
+        "title": "Our categories",
+        "subtitle": "Discover our wide range of products",
+        "viewAll": "View all",
+        "products": "products",
+        "product": "product"
+    },
+    "featured": {
+        "title": "Featured products",
+        "subtitle": "Our selection of must-have products",
+        "viewAll": "All products",
+        "newTitle": "New arrivals",
+        "newSubtitle": "The latest arrivals in our showroom",
+        "viewAllNew": "All new arrivals"
+    },
+    "promo": {
+        "badge": "Limited promotion",
+        "discount": "OFF",
+        "viewOffers": "View offers",
+        "endsIn": "Offer ends in",
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Min",
+        "seconds": "Sec"
+    },
+    "whyUs": {
+        "title": "Why choose us?",
+        "subtitle": "Saffron Electronics, your trusted partner for over 10 years",
+        "original": {
+            "title": "Original products",
+            "desc": "All our products are guaranteed original with a certificate of authenticity."
+        },
+        "guarantee": {
+            "title": "Manufacturer warranty",
+            "desc": "Each product comes with the official manufacturer's warranty."
+        },
+        "promotions": {
+            "title": "Regular promotions",
+            "desc": "Exceptional offers up to -40% throughout the year."
+        },
+        "service": {
+            "title": "After-sales service",
+            "desc": "Our technical team is available to assist you."
+        },
+        "experience": {
+            "title": "10 years of experience",
+            "desc": "A decade of expertise serving Ivorian households."
+        },
+        "delivery": {
+            "title": "Delivery in Abidjan",
+            "desc": "Delivery service available throughout the city of Abidjan."
+        }
+    },
+    "contact": {
+        "title": "Contact us",
+        "subtitle": "Our team is available to help you",
+        "coordinates": "Our contact details",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "hours": "Opening hours",
+        "weekdays": "Monday - Saturday",
+        "sunday": "Sunday",
+        "facebook": "Facebook",
+        "formTitle": "Send us a message",
+        "formSubtitle": "Fill in the form and we will get back to you as soon as possible.",
+        "name": "Full name",
+        "namePlaceholder": "Your name",
+        "emailPlaceholder": "your@email.com",
+        "phonePlaceholder": "+225 07 00 00 00 00",
+        "subject": "Subject",
+        "subjectPlaceholder": "Subject of your message",
+        "message": "Message",
+        "messagePlaceholder": "Describe your request...",
+        "send": "Send message",
+        "successTitle": "Message sent!",
+        "successMsg": "Your message has been received. We will reply as soon as possible.",
+        "callUs": "Call us",
+        "schedule": "Opening hours",
+        "scheduleValue": "Mon-Sat 8am-7pm, Sun 9am-7pm"
+    },
+    "products": {
+        "title": "Our catalogue",
+        "loading": "Loading...",
+        "results": "products available",
+        "filters": "Filters",
+        "clearFilters": "Clear",
+        "categories": "Categories",
+        "all": "All",
+        "options": "Options",
+        "isNew": "New arrivals",
+        "isPromo": "On sale",
+        "sortLabel": "Sort by",
+        "sortRecent": "Most recent",
+        "sortOldest": "Oldest",
+        "sortPriceAsc": "Price ascending",
+        "sortPriceDesc": "Price descending",
+        "noResults": "No products found",
+        "noResultsHint": "Try adjusting your filters",
+        "search": "Search for a product...",
+        "viewDetail": "View details",
+        "new": "NEW",
+        "outOfStock": "Out of stock",
+        "lowStock": "Low stock",
+        "inStock": "IN STOCK",
+        "rupture": "OUT OF STOCK"
+    },
+    "productDetail": {
+        "back": "Back to products",
+        "home": "Home",
+        "brand": "Brand",
+        "ref": "Ref",
+        "callOrder": "Call to order",
+        "whatsapp": "WhatsApp",
+        "guarantee": "Manufacturer warranty included",
+        "original": "Original and certified product",
+        "lowStockMsg": "Only {{count}} left in stock",
+        "inShowroom": "Available in showroom",
+        "description": "Description",
+        "specifications": "Specifications",
+        "noDesc": "No description available.",
+        "noSpecs": "No specifications available.",
+        "related": "Related products",
+        "notFound": "Product not found",
+        "savings": "You save {{amount}} ({{percent}}%)"
+    },
+    "promotions": {
+        "title": "Current promotions",
+        "subtitle": "Up to -40% on a selection of home appliances",
+        "badge": "Limited offers",
+        "campaigns": "Promotional campaigns",
+        "from": "From",
+        "to": "to",
+        "productsTitle": "Products on sale",
+        "noPromo": "No current promotions at the moment.",
+        "endsIn": "Offer ends",
+        "in": "in"
+    },
+    "about": {
+        "badge": "Our story",
+        "title": "Over 10 years at your service",
+        "subtitle": "Saffron Electronics was born from the vision of making quality home appliances accessible to all Ivorian households.",
+        "experience": "Years of experience",
+        "clients": "Satisfied customers",
+        "catalog": "Products in catalogue",
+        "showroom": "Showroom in Abidjan",
+        "whoWeAre": "Who we are",
+        "partnerTitle": "Your trusted home appliance partner",
+        "p1": "Founded over 10 years ago, Saffron Electronics has established itself as one of the key references in home appliances in Abidjan. Our showroom, located at the Riviera Palmeraie roundabout near BICICI, welcomes hundreds of customers every day.",
+        "p2": "We offer a complete range of home appliances: refrigerators, air conditioners, washing machines, televisions, and a wide selection of small appliances. All our products are sourced from the world's best brands and come with the manufacturer's warranty.",
+        "p3": "Our commitment: to offer you the best products at the best prices, with exceptional customer service. Regular promotions of up to 40% discount further strengthen our accessibility.",
+        "yearsExp": "Years of expertise",
+        "maxDiscount": "Max discount",
+        "open": "Open every day",
+        "original": "Original products",
+        "valuesTitle": "Our values",
+        "valuesSubtitle": "The principles that guide each of our actions",
+        "quality": {
+            "title": "Quality",
+            "desc": "We select only original products from the world's best brands, guaranteeing performance and durability."
+        },
+        "trust": {
+            "title": "Trust",
+            "desc": "Over a decade of loyal service to Ivorian households. Our reputation is built on honesty and transparency."
+        },
+        "service": {
+            "title": "Service",
+            "desc": "From showroom reception to after-sales service, our team is always available to assist you."
+        },
+        "price": {
+            "title": "Competitive prices",
+            "desc": "We negotiate the best rates to offer you unbeatable prices without compromising on quality."
+        }
+    },
+    "footer": {
+        "description": "Your home appliance specialist in Abidjan for over 10 years. Quality, service and competitive prices.",
+        "navigation": "Navigation",
+        "contact": "Contact",
+        "hours": "Opening hours",
+        "weekdays": "Monday - Saturday",
+        "sunday": "Sunday",
+        "openNow": "Open now",
+        "openUntil": "7 days/7 until 7pm",
+        "rights": "All rights reserved."
+    },
+    "notFound": {
+        "title": "Page not found",
+        "subtitle": "The page you are looking for does not exist or has been moved.",
+        "home": "Home",
+        "back": "Back"
+    },
+    "language": {
+        "fr": "Francais",
+        "en": "English"
+    }
+}
