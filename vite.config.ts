@@ -4,22 +4,23 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  base: "/",  // ← AJOUTE CETTE LIGNE ICI
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
   server: {
-  port: 3000,
-  proxy: {
-    '/api': {
-      target: 'http://localhost:8000',
-      changeOrigin: true,
-    },
-    '/storage': {          // ← ajouter ceci
-      target: 'http://localhost:8000',
-      changeOrigin: true,
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+      },
+      '/storage': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+      }
     }
   }
-}
 })
