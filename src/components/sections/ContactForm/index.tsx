@@ -1,19 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import { useTranslation } from 'react-i18next'
 import { Send, CheckCircle, User, Mail, Phone, MessageSquare, AlignLeft } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useContactForm } from '@/hooks/useContactForm'
 import type { ContactFormData } from '@/types/product.types'
 
-const schema = z.object({
-  name: z.string().min(2, 'Au moins 2 caracteres requis'),
-  email: z.string().email('Email invalide'),
-  phone: z.string().optional(),
-  subject: z.string().min(5, 'Au moins 5 caracteres'),
-  message: z.string().min(20, 'Au moins 20 caracteres'),
-})
+// Le schéma de validation utilise t() via une factory pour que les messages
+// soient re-évalués à chaque changement de langue
+const makeSchema = (t: (key: string, opts?: any) => string) =>
+  z.object({
+    name:    z.string().min(2,  t('contactForm.errorName')),
+    email:   z.string().email(  t('contactForm.errorEmail')),
+    phone:   z.string().optional(),
+    subject: z.string().min(5,  t('contactForm.errorSubject')),
+    message: z.string().min(20, t('contactForm.errorMessage')),
+  })
 
 interface FloatingFieldProps {
   label: string
@@ -50,12 +54,14 @@ const FloatingField: React.FC<FloatingFieldProps> = ({ label, icon, error, child
 )
 
 const inputClass = "w-full pl-11 pr-4 py-4 bg-transparent text-gray-900 text-sm font-medium placeholder-gray-300 outline-none rounded-2xl"
-const taClass = "w-full pl-11 pr-4 py-4 bg-transparent text-gray-900 text-sm font-medium placeholder-gray-300 outline-none rounded-2xl resize-none"
+const taClass    = "w-full pl-11 pr-4 py-4 bg-transparent text-gray-900 text-sm font-medium placeholder-gray-300 outline-none rounded-2xl resize-none"
 
 export const ContactForm: React.FC = () => {
+  const { t } = useTranslation()
   const { mutate: sendMessage, isPending, isSuccess } = useContactForm()
+
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(makeSchema(t)),
   })
 
   const onSubmit = (data: ContactFormData) => {
@@ -77,9 +83,9 @@ export const ContactForm: React.FC = () => {
         >
           <CheckCircle size={36} className="text-white" />
         </motion.div>
-        <h3 className="font-black text-gray-900 text-2xl mb-3">Message envoye !</h3>
+        <h3 className="font-black text-gray-900 text-2xl mb-3">{t('contact.successTitle')}</h3>
         <p className="text-gray-400 text-sm max-w-xs mx-auto leading-relaxed">
-          Votre message a bien ete recu. Nous vous repondrons dans les meilleurs delais.
+          {t('contact.successMsg')}
         </p>
       </motion.div>
     )
@@ -93,25 +99,31 @@ export const ContactForm: React.FC = () => {
       className="flex flex-col gap-4"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <FloatingField label="Nom" icon={<User size={16} />} error={errors.name?.message}>
-          <input placeholder="Votre nom complet" {...register('name')} className={inputClass} />
+        <FloatingField label={t('contact.name')} icon={<User size={16} />} error={errors.name?.message}>
+          <input placeholder={t('contact.namePlaceholder')} {...register('name')} className={inputClass} />
         </FloatingField>
-        <FloatingField label="Email" icon={<Mail size={16} />} error={errors.email?.message}>
-          <input type="email" placeholder="votre@email.com" {...register('email')} className={inputClass} />
+        <FloatingField label={t('contact.email')} icon={<Mail size={16} />} error={errors.email?.message}>
+          <input type="email" placeholder={t('contact.emailPlaceholder')} {...register('email')} className={inputClass} />
         </FloatingField>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <FloatingField label="Telephone" icon={<Phone size={16} />} error={errors.phone?.message}>
-          <input type="tel" placeholder="+225 07 00 00 00 00" {...register('phone')} className={inputClass} />
+        <FloatingField label={t('contact.phone')} icon={<Phone size={16} />} error={errors.phone?.message}>
+          <input type="tel" placeholder={t('contact.phonePlaceholder')} {...register('phone')} className={inputClass} />
         </FloatingField>
-        <FloatingField label="Sujet" icon={<MessageSquare size={16} />} error={errors.subject?.message}>
-          <input placeholder="Sujet du message" {...register('subject')} className={inputClass} />
+        <FloatingField label={t('contact.subject')} icon={<MessageSquare size={16} />} error={errors.subject?.message}>
+          <input placeholder={t('contact.subjectPlaceholder')} {...register('subject')} className={inputClass} />
         </FloatingField>
       </div>
 
-      <FloatingField label="Message" icon={<AlignLeft size={16} />} error={errors.message?.message}>
-        <textarea rows={5} placeholder="Decrivez votre demande..." {...register('message')} className={taClass} style={{ paddingTop: '16px' }} />
+      <FloatingField label={t('contact.message')} icon={<AlignLeft size={16} />} error={errors.message?.message}>
+        <textarea
+          rows={5}
+          placeholder={t('contact.messagePlaceholder')}
+          {...register('message')}
+          className={taClass}
+          style={{ paddingTop: '16px' }}
+        />
       </FloatingField>
 
       <motion.button
@@ -121,9 +133,7 @@ export const ContactForm: React.FC = () => {
         whileTap={{ scale: 0.97 }}
         className="relative overflow-hidden flex items-center justify-center gap-3 w-full bg-gray-900 text-white font-black py-4 px-8 rounded-2xl text-sm disabled:opacity-60 group"
       >
-        {/* Animated gradient on hover */}
         <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-        {/* Shimmer */}
         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
         <span className="relative flex items-center gap-3">
@@ -134,11 +144,11 @@ export const ContactForm: React.FC = () => {
                 transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
                 className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
               />
-              Envoi en cours...
+              {t('contactForm.sending')}
             </>
           ) : (
             <>
-              Envoyer le message
+              {t('contact.send')}
               <Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </>
           )}

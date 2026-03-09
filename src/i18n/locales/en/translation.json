@@ -9,15 +9,29 @@
     },
     "hero": {
         "badge": "Over 10 years of experience in Abidjan",
+        "eyebrow": "N°1 in Abidjan",
+        "titleLine1": "Home",
+        "titleLine2": "appliances",
+        "titleLine3Prefix": "always",
+        "cyclingWord1": "reliable",
+        "cyclingWord2": "guaranteed",
+        "cyclingWord3": "delivered",
+        "cyclingWord4": "affordable",
+        "socialProof": "+5,000 satisfied customers · Abidjan",
+        "subtitlePrefix": "Refrigerators, air conditioners, televisions and more —",
+        "subtitleGuarantee": "manufacturer warranty",
+        "subtitleMid": "and promotions up to",
+        "subtitleDiscount": "40% off",
+        "discountBadge": "Up to -40% off",
         "title": "Quality home appliances in Abidjan",
         "titleHighlight": "Quality",
         "subtitle": "Refrigerators, air conditioners, washing machines, televisions and more. Up to 40% off at Saffron Electronics.",
         "cta": "View products",
         "ctaPromo": "Current promotions",
         "stats": {
-            "experience": "Years of experience",
-            "products": "Products available",
-            "discount": "Up to discount"
+            "experience": "Yrs of exp.",
+            "products": "Products",
+            "discount": "Max discount"
         },
         "guarantee": "Manufacturer warranty",
         "openNow": "Open now"
@@ -75,7 +89,41 @@
             "desc": "Delivery service available throughout the city of Abidjan."
         }
     },
+    "home": {
+        "meta": {
+            "title": "Saffron Electronics CI — Home Appliances Abidjan",
+            "description": "Your home appliance specialist in Abidjan. Refrigerators, air conditioners, televisions, washing machines. Up to 40% off."
+        },
+        "stats": {
+            "sectionBadge": "Our numbers",
+            "sectionTitleLine1": "The reference",
+            "sectionTitleHighlight": "home appliance",
+            "sectionTitleLine2": "in Abidjan",
+            "experienceLabel": "Years of experience",
+            "experienceSub": "On the Ivorian market",
+            "clientsLabel": "Satisfied customers",
+            "clientsSub": "Trust Saffron",
+            "productsLabel": "Products",
+            "productsSub": "In permanent catalogue",
+            "promoLabel": "Up to -40%",
+            "promoSub": "On active promotions"
+        },
+        "contact": {
+            "sectionBadge": "Always here",
+            "sectionTitle": "Find us",
+            "callLink": "Call directly",
+            "phoneLabel": "Call us",
+            "hoursLabel": "Opening hours",
+            "hoursValue": "Mon-Sat 8am-7pm · Sun 9am-7pm",
+            "showroomLabel": "Showroom",
+            "showroomValue": "Riviera Palmeraie, Abidjan"
+        }
+    },
     "contact": {
+        "meta": {
+            "title": "Contact — Saffron Electronics CI",
+            "description": "Contact Saffron Electronics in Abidjan. Phone, email, contact form and showroom address."
+        },
         "title": "Contact us",
         "subtitle": "Our team is available to help you",
         "coordinates": "Our contact details",
@@ -101,9 +149,32 @@
         "successMsg": "Your message has been received. We will reply as soon as possible.",
         "callUs": "Call us",
         "schedule": "Opening hours",
-        "scheduleValue": "Mon-Sat 8am-7pm, Sun 9am-7pm"
+        "scheduleValue": "Mon-Sat 8am-7pm, Sun 9am-7pm",
+        "heroBadge": "We're listening",
+        "heroTitleLine1": "Let's talk about",
+        "heroTitleHighlight": "your project",
+        "heroSubtitle": "Our team is available to answer all your questions, 7 days a week.",
+        "cardPhoneLabel": "Phone",
+        "cardPhoneSub": "Immediate response",
+        "cardEmailLabel": "Email",
+        "cardEmailSub": "Response within 24h",
+        "cardShowroomLabel": "Showroom",
+        "cardShowroomValue": "Riviera Palmeraie",
+        "cardHoursLabel": "Opening hours",
+        "cardHoursValue": "Mon-Sat 8am-7pm",
+        "cardHoursSub": "Sunday 9am-7pm",
+        "writeSectionBadge": "Message",
+        "writeSectionTitle": "Write to us",
+        "writeSectionSubtitle": "We will get back to you as soon as possible.",
+        "openNow": "Open now",
+        "followUs": "Follow us"
     },
     "products": {
+        "meta": {
+            "title": "Products — Saffron Electronics CI",
+            "description": "Complete home appliance catalogue: refrigerators, air conditioners, televisions and more."
+        },
+        "shopBadge": "Shop",
         "title": "Our catalogue",
         "loading": "Loading...",
         "results": "products available",
@@ -130,6 +201,12 @@
         "rupture": "OUT OF STOCK"
     },
     "productDetail": {
+        "meta": {
+            "description": "Discover this product at Saffron Electronics CI."
+        },
+        "relatedBadge": "You may also like",
+        "whatsappMessage": "Hello, I am interested in:",
+        "whatsappQuestion": "Could you give me more information?",
         "back": "Back to products",
         "home": "Home",
         "brand": "Brand",
@@ -149,19 +226,60 @@
         "savings": "You save {{amount}} ({{percent}}%)"
     },
     "promotions": {
+        "meta": {
+            "title": "Promotions — Saffron Electronics CI",
+            "description": "Discover current promotions at Saffron Electronics. Up to 40% off on home appliances in Abidjan."
+        },
         "title": "Current promotions",
         "subtitle": "Up to -40% on a selection of home appliances",
         "badge": "Limited offers",
-        "campaigns": "Promotional campaigns",
+        "campaigns": "Our promotions",
+        "campaignsBadge": "Campaigns",
+        "selectionBadge": "Selection",
+        "otherOffers": "Other offers",
+        "active": "Active",
+        "productSingular": "product",
+        "productsPlural": "products",
+        "onSale": "on sale",
+        "noProductsCampaign": "No products linked to this campaign.",
+        "viewAll": "View all",
+        "viewAllProducts": "View all products",
+        "noPromo": "No current promotions",
+        "noPromoSub": "Come back soon to discover our offers.",
         "from": "From",
         "to": "to",
         "productsTitle": "Products on sale",
-        "noPromo": "No current promotions at the moment.",
-        "endsIn": "Offer ends",
-        "in": "in"
+        "endsIn": "End of",
+        "in": "in",
+        "heroLine1": "Up to",
+        "heroHighlight": "-40%",
+        "heroSubtitle": "On a selection of refrigerators, air conditioners, televisions and more."
     },
     "about": {
+        "meta": {
+            "title": "About us — Saffron Electronics CI",
+            "description": "Discover the story of Saffron Electronics, your home appliance specialist in Abidjan for over 10 years."
+        },
         "badge": "Our story",
+        "heroLine1": "Over",
+        "heroHighlight": "10 years",
+        "heroLine3": "at your service",
+        "heroSubtitle": {
+            "before": "Saffron Electronics is the must-have home appliance reference in Abidjan —",
+            "quality": "quality",
+            "and1": ",",
+            "trust": "trust",
+            "and2": "and",
+            "service": "service"
+        },
+        "scrollHint": "Discover",
+        "partnerTitleLine1": "Your trusted",
+        "partnerTitleHighlight": "partner",
+        "valuesBadge": "What defines us",
+        "timelineTitleLine1": "A decade",
+        "timelineTitleLine2": "of excellence",
+        "ctaTitleLine1": "Come visit us",
+        "ctaTitleHighlight": "in Abidjan",
         "title": "Over 10 years at your service",
         "subtitle": "Saffron Electronics was born from the vision of making quality home appliances accessible to all Ivorian households.",
         "experience": "Years of experience",
@@ -177,34 +295,80 @@
         "maxDiscount": "Max discount",
         "open": "Open every day",
         "original": "Original products",
+        "checkGuarantee": "Manufacturer warranty",
+        "checkOriginal": "100% original products",
+        "checkDelivery": "Home delivery",
+        "checkAfterSales": "After-sales service",
         "valuesTitle": "Our values",
-        "valuesSubtitle": "The principles that guide each of our actions",
+        "valuesSubtitle": "The principles that guide each of our actions, every day.",
         "quality": {
-            "title": "Quality",
-            "desc": "We select only original products from the world's best brands, guaranteeing performance and durability."
+            "title": "Guaranteed quality",
+            "desc": "Original products from the world's best brands, with manufacturer warranty on all items.",
+            "tag": "100% original"
         },
         "trust": {
-            "title": "Trust",
-            "desc": "Over a decade of loyal service to Ivorian households. Our reputation is built on honesty and transparency."
+            "title": "Established trust",
+            "desc": "Over a decade of loyal service. A reputation built on honesty and total transparency.",
+            "tag": "+5,000 clients"
         },
         "service": {
-            "title": "Service",
-            "desc": "From showroom reception to after-sales service, our team is always available to assist you."
+            "title": "Complete service",
+            "desc": "From showroom reception to after-sales service, our team supports you at every step.",
+            "tag": "7 days/7"
         },
         "price": {
-            "title": "Competitive prices",
-            "desc": "We negotiate the best rates to offer you unbeatable prices without compromising on quality."
-        }
+            "title": "Unbeatable prices",
+            "desc": "Best rates negotiated directly with suppliers. Competitive prices without compromising on quality.",
+            "tag": "Up to -40%"
+        },
+        "timelineBadge": "Our journey",
+        "timelineTitle": "A decade of excellence",
+        "timeline": {
+            "2013": {
+                "title": "Foundation",
+                "text": "Opening of the first store in Abidjan with a clear vision: democratizing access to quality home appliances."
+            },
+            "2016": {
+                "title": "Expansion",
+                "text": "Showroom expansion and catalogue enrichment with the world's leading brands."
+            },
+            "2019": {
+                "title": "Digital",
+                "text": "Launch of the online store to reach all of Ivory Coast and simplify the buying experience."
+            },
+            "2024": {
+                "title": "Today",
+                "text": "A must-have reference in home appliances in Abidjan with over 5,000 loyal customers."
+            }
+        },
+        "ctaBadge": "Ready to start?",
+        "ctaTitle": "Come visit us in Abidjan",
+        "ctaSubtitle": "Showroom open 7 days/7 · Riviera Palmeraie roundabout · Free personalized advice",
+        "ctaProducts": "Explore our products",
+        "ctaFind": "Find us"
+    },
+    "contactForm": {
+        "errorName": "At least 2 characters required",
+        "errorEmail": "Invalid email address",
+        "errorSubject": "At least 5 characters required",
+        "errorMessage": "At least 20 characters required",
+        "sending": "Sending..."
     },
     "footer": {
+        "ctaBadge": "Always available",
+        "ctaTitleLine1": "Your home appliance project",
+        "ctaTitleHighlight": "starts here.",
+        "callNow": "Call now",
+        "writeUs": "Write to us",
         "description": "Your home appliance specialist in Abidjan for over 10 years. Quality, service and competitive prices.",
         "navigation": "Navigation",
         "contact": "Contact",
         "hours": "Opening hours",
-        "weekdays": "Monday - Saturday",
+        "weekdays": "Mon — Sat",
         "sunday": "Sunday",
         "openNow": "Open now",
         "openUntil": "7 days/7 until 7pm",
+        "country": "Ivory Coast",
         "rights": "All rights reserved."
     },
     "notFound": {

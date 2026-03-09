@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router-dom'
 import { SlidersHorizontal, Search, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -18,6 +19,7 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 
 export const ProductsPage: React.FC = () => {
+  const { t } = useTranslation()
   const [searchParams] = useSearchParams()
   const [showFilters, setShowFilters] = useState(false)
   const [searchInput, setSearchInput] = useState(searchParams.get('search') || '')
@@ -56,11 +58,8 @@ export const ProductsPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Produits — Saffron Electronics CI</title>
-        <meta
-          name="description"
-          content="Catalogue complet d'electromenager: refrigerateurs, climatiseurs, televisions et bien plus."
-        />
+        <title>{t('products.meta.title')}</title>
+        <meta name="description" content={t('products.meta.description')} />
       </Helmet>
 
       {/* Header */}
@@ -71,11 +70,13 @@ export const ProductsPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs font-black text-orange-500 uppercase tracking-[0.22em] mb-3">Boutique</p>
+            <p className="text-xs font-black text-orange-500 uppercase tracking-[0.22em] mb-3">
+              {t('products.shopBadge')}
+            </p>
             <div className="flex items-end justify-between gap-4">
-              <h1 className="text-5xl font-black text-gray-900 leading-none">Notre catalogue</h1>
+              <h1 className="text-5xl font-black text-gray-900 leading-none">{t('products.title')}</h1>
               <span className="text-sm text-gray-400 pb-2">
-                {data?.total !== undefined ? `${data.total} produits` : ''}
+                {data?.total !== undefined ? `${data.total} ${t('products.results')}` : ''}
               </span>
             </div>
           </motion.div>
@@ -89,7 +90,7 @@ export const ProductsPage: React.FC = () => {
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300 group-focus-within:text-orange-400 transition-colors"
               />
               <input
-                placeholder="Rechercher un produit..."
+                placeholder={t('products.search')}
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 className="w-full pl-11 pr-10 py-3 bg-gray-50 border-2 border-transparent focus:border-orange-400 focus:bg-white rounded-2xl text-gray-900 text-sm placeholder-gray-300 outline-none transition-all duration-200 focus:shadow-[0_0_0_4px_rgba(249,115,22,0.08)]"
@@ -115,7 +116,6 @@ export const ProductsPage: React.FC = () => {
                 value={`${filters.sort_by}_${filters.sort_order}`}
                 onChange={(e) => {
                   const parts = e.target.value.split('_')
-                  // "created_at_desc" → field = "created_at", order = "desc"
                   const order = parts.pop() as 'asc' | 'desc'
                   const field = parts.join('_')
                   updateFilter('sort_by', field)
@@ -123,15 +123,12 @@ export const ProductsPage: React.FC = () => {
                 }}
                 className="appearance-none pl-4 pr-9 py-3 bg-gray-50 border-2 border-transparent focus:border-orange-400 rounded-2xl text-sm text-gray-600 outline-none cursor-pointer transition-all"
               >
-                <option value="created_at_desc">Plus recents</option>
-                <option value="created_at_asc">Plus anciens</option>
-                <option value="price_asc">Prix croissant</option>
-                <option value="price_desc">Prix decroissant</option>
+                <option value="created_at_desc">{t('products.sortRecent')}</option>
+                <option value="created_at_asc">{t('products.sortOldest')}</option>
+                <option value="price_asc">{t('products.sortPriceAsc')}</option>
+                <option value="price_desc">{t('products.sortPriceDesc')}</option>
               </select>
-              <ChevronDown
-                size={13}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-              />
+              <ChevronDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
             </div>
 
             {/* Mobile filters toggle */}
@@ -144,7 +141,7 @@ export const ProductsPage: React.FC = () => {
               }`}
             >
               <SlidersHorizontal size={14} />
-              Filtres
+              {t('products.filters')}
               {activeFilterCount > 0 && (
                 <span className="w-5 h-5 rounded-full bg-white text-orange-500 text-xs flex items-center justify-center font-black">
                   {activeFilterCount}
@@ -163,22 +160,24 @@ export const ProductsPage: React.FC = () => {
             <aside className={`lg:w-56 shrink-0 ${showFilters ? 'block' : 'hidden lg:block'}`}>
               <div className="bg-white border border-gray-100 rounded-3xl p-6 sticky top-28">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="font-black text-gray-900 text-sm">Filtres</h3>
+                  <h3 className="font-black text-gray-900 text-sm">{t('products.filters')}</h3>
                   {activeFilterCount > 0 && (
                     <button
                       onClick={clearFilters}
                       className="text-xs font-bold text-red-400 hover:text-red-500 flex items-center gap-1"
                     >
-                      <X size={11} /> Effacer
+                      <X size={11} /> {t('products.clearFilters')}
                     </button>
                   )}
                 </div>
 
                 {/* Categories */}
                 <div className="mb-6">
-                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-3">Categories</p>
+                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-3">
+                    {t('products.categories')}
+                  </p>
                   <div className="flex flex-col gap-1">
-                    {[{ id: '', name: 'Toutes', slug: '' }, ...(categories || [])].map((cat) => (
+                    {[{ id: '', name: t('products.all'), slug: '' }, ...(categories || [])].map((cat) => (
                       <button
                         key={cat.id}
                         onClick={() => updateFilter('category', cat.slug)}
@@ -190,10 +189,7 @@ export const ProductsPage: React.FC = () => {
                       >
                         {cat.name}
                         {filters.category === cat.slug && (
-                          <motion.span
-                            layoutId="catActive"
-                            className="w-1.5 h-1.5 rounded-full bg-orange-500"
-                          />
+                          <motion.span layoutId="catActive" className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                         )}
                       </button>
                     ))}
@@ -204,11 +200,13 @@ export const ProductsPage: React.FC = () => {
 
                 {/* Options */}
                 <div>
-                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-3">Options</p>
+                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-3">
+                    {t('products.options')}
+                  </p>
                   {[
-                    { key: 'is_new', label: 'Nouveautes' },
-                    { key: 'is_promotion', label: 'En promotion' },
-                  ].map(({ key, label }) => (
+                    { key: 'is_new',       labelKey: 'products.isNew'   },
+                    { key: 'is_promotion', labelKey: 'products.isPromo' },
+                  ].map(({ key, labelKey }) => (
                     <button
                       key={key}
                       onClick={() => updateFilter(key as keyof ProductFilters, !(filters as any)[key])}
@@ -218,12 +216,8 @@ export const ProductsPage: React.FC = () => {
                           : 'text-gray-500 hover:bg-gray-50'
                       }`}
                     >
-                      {label}
-                      <div
-                        className={`w-9 h-5 rounded-full transition-colors duration-200 flex items-center px-0.5 ${
-                          (filters as any)[key] ? 'bg-orange-500' : 'bg-gray-200'
-                        }`}
-                      >
+                      {t(labelKey)}
+                      <div className={`w-9 h-5 rounded-full transition-colors duration-200 flex items-center px-0.5 ${(filters as any)[key] ? 'bg-orange-500' : 'bg-gray-200'}`}>
                         <motion.div
                           animate={{ x: (filters as any)[key] ? 16 : 0 }}
                           transition={{ type: 'spring', stiffness: 500, damping: 28 }}
@@ -239,7 +233,6 @@ export const ProductsPage: React.FC = () => {
             {/* Products grid */}
             <div className="flex-1">
               {isLoading || isFetching ? (
-                /* Skeleton */
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                   {[...Array(6)].map((_, i) => (
                     <div key={i} className="bg-white border border-gray-100 rounded-3xl overflow-hidden">
@@ -253,7 +246,6 @@ export const ProductsPage: React.FC = () => {
                   ))}
                 </div>
               ) : data?.data?.length === 0 ? (
-                /* Empty state */
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -262,15 +254,13 @@ export const ProductsPage: React.FC = () => {
                   <div className="w-16 h-16 bg-orange-50 border border-orange-100 rounded-3xl flex items-center justify-center mx-auto mb-5">
                     <Search size={24} className="text-orange-300" />
                   </div>
-                  <h3 className="font-black text-gray-900 text-xl mb-2">Aucun produit trouve</h3>
-                  <p className="text-gray-400 mb-6 text-sm">
-                    Modifiez vos filtres pour trouver ce que vous cherchez
-                  </p>
+                  <h3 className="font-black text-gray-900 text-xl mb-2">{t('products.noResults')}</h3>
+                  <p className="text-gray-400 mb-6 text-sm">{t('products.noResultsHint')}</p>
                   <button
                     onClick={clearFilters}
                     className="px-6 py-2.5 bg-gray-900 text-white font-bold text-sm rounded-xl hover:bg-orange-500 transition-colors"
                   >
-                    Effacer les filtres
+                    {t('products.clearFilters')}
                   </button>
                 </motion.div>
               ) : (
@@ -286,8 +276,6 @@ export const ProductsPage: React.FC = () => {
                           exit={{ opacity: 0, scale: 0.95 }}
                           transition={{ delay: (i % 6) * 0.06 }}
                         >
-                          {/* ✅ ProductCard reçoit le produit avec images[] = URLs complètes
-                              depuis ProductResource — aucune transformation nécessaire ici */}
                           <ProductCard product={product} />
                         </motion.div>
                       ))}

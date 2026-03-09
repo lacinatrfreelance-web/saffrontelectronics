@@ -9,15 +9,29 @@
     },
     "hero": {
         "badge": "Plus de 10 ans d'experience a Abidjan",
+        "eyebrow": "N°1 a Abidjan",
+        "titleLine1": "L'electro-",
+        "titleLine2": "menager",
+        "titleLine3Prefix": "toujours",
+        "cyclingWord1": "performant",
+        "cyclingWord2": "garanti",
+        "cyclingWord3": "livre",
+        "cyclingWord4": "accessible",
+        "socialProof": "+5 000 clients satisfaits · Abidjan",
+        "subtitlePrefix": "Refrigerateurs, climatiseurs, televisions et bien plus —",
+        "subtitleGuarantee": "garantie constructeur",
+        "subtitleMid": "et promotions jusqu'a",
+        "subtitleDiscount": "40% de remise",
+        "discountBadge": "Jusqu'a -40% de remise",
         "title": "L'electromenager de qualite a Abidjan",
         "titleHighlight": "de qualite",
         "subtitle": "Refrigerateurs, climatiseurs, machines a laver, televisions et bien plus. Promotions jusqu'a 40% chez Saffron Electronics.",
         "cta": "Voir les produits",
         "ctaPromo": "Promotions en cours",
         "stats": {
-            "experience": "Ans d'experience",
-            "products": "Produits disponibles",
-            "discount": "Jusqu'a de remise"
+            "experience": "Ans d'exp.",
+            "products": "Produits",
+            "discount": "Remise max"
         },
         "guarantee": "Garantie constructeur",
         "openNow": "Ouvert maintenant"
@@ -75,7 +89,41 @@
             "desc": "Service de livraison disponible sur toute la ville d'Abidjan."
         }
     },
+    "home": {
+        "meta": {
+            "title": "Saffron Electronics CI — Electromenager Abidjan",
+            "description": "Votre specialiste en electromenager a Abidjan. Refrigerateurs, climatiseurs, televisions, machines a laver. Promotions jusqu'a 40%."
+        },
+        "stats": {
+            "sectionBadge": "Nos chiffres",
+            "sectionTitleLine1": "La reference",
+            "sectionTitleHighlight": "electromenager",
+            "sectionTitleLine2": "a Abidjan",
+            "experienceLabel": "Annees d'experience",
+            "experienceSub": "Sur le marche ivoirien",
+            "clientsLabel": "Clients satisfaits",
+            "clientsSub": "Font confiance a Saffron",
+            "productsLabel": "Produits",
+            "productsSub": "En catalogue permanent",
+            "promoLabel": "Jusqu'a -40%",
+            "promoSub": "Sur les promotions actives"
+        },
+        "contact": {
+            "sectionBadge": "Toujours la",
+            "sectionTitle": "Retrouvez-nous",
+            "callLink": "Appeler directement",
+            "phoneLabel": "Appelez-nous",
+            "hoursLabel": "Horaires",
+            "hoursValue": "Lun-Sam 8h-19h · Dim 9h-19h",
+            "showroomLabel": "Showroom",
+            "showroomValue": "Riviera Palmeraie, Abidjan"
+        }
+    },
     "contact": {
+        "meta": {
+            "title": "Contact — Saffron Electronics CI",
+            "description": "Contactez Saffron Electronics a Abidjan. Telephone, email, formulaire de contact et adresse du showroom."
+        },
         "title": "Contactez-nous",
         "subtitle": "Notre equipe est disponible pour vous aider",
         "coordinates": "Nos coordonnees",
@@ -101,9 +149,32 @@
         "successMsg": "Votre message a ete recu. Nous vous repondrons dans les plus brefs delais.",
         "callUs": "Appelez-nous",
         "schedule": "Horaires",
-        "scheduleValue": "Lun-Sam 8h-19h, Dim 9h-19h"
+        "scheduleValue": "Lun-Sam 8h-19h, Dim 9h-19h",
+        "heroBadge": "On vous ecoute",
+        "heroTitleLine1": "Parlons de",
+        "heroTitleHighlight": "votre projet",
+        "heroSubtitle": "Notre equipe est disponible pour repondre a toutes vos questions, 7 jours sur 7.",
+        "cardPhoneLabel": "Telephone",
+        "cardPhoneSub": "Reponse immediate",
+        "cardEmailLabel": "Email",
+        "cardEmailSub": "Reponse sous 24h",
+        "cardShowroomLabel": "Showroom",
+        "cardShowroomValue": "Riviera Palmeraie",
+        "cardHoursLabel": "Horaires",
+        "cardHoursValue": "Lun-Sam 8h-19h",
+        "cardHoursSub": "Dimanche 9h-19h",
+        "writeSectionBadge": "Message",
+        "writeSectionTitle": "Ecrivez-nous",
+        "writeSectionSubtitle": "Nous vous repondrons dans les meilleurs delais.",
+        "openNow": "Ouvert maintenant",
+        "followUs": "Suivez-nous"
     },
     "products": {
+        "meta": {
+            "title": "Produits — Saffron Electronics CI",
+            "description": "Catalogue complet d'electromenager : refrigerateurs, climatiseurs, televisions et bien plus."
+        },
+        "shopBadge": "Boutique",
         "title": "Notre catalogue",
         "loading": "Chargement...",
         "results": "produits disponibles",
@@ -130,6 +201,12 @@
         "rupture": "RUPTURE DE STOCK"
     },
     "productDetail": {
+        "meta": {
+            "description": "Decouvrez ce produit sur Saffron Electronics CI."
+        },
+        "relatedBadge": "Vous aimerez aussi",
+        "whatsappMessage": "Bonjour, je suis interesse par :",
+        "whatsappQuestion": "Pouvez-vous me donner plus d'informations ?",
         "back": "Retour aux produits",
         "home": "Accueil",
         "brand": "Marque",
@@ -149,19 +226,60 @@
         "savings": "Vous economisez {{amount}} ({{percent}}%)"
     },
     "promotions": {
+        "meta": {
+            "title": "Promotions — Saffron Electronics CI",
+            "description": "Decouvrez les promotions en cours chez Saffron Electronics. Jusqu'a 40% de remise sur l'electromenager a Abidjan."
+        },
         "title": "Promotions en cours",
         "subtitle": "Jusqu'a -40% sur une selection de produits electromenagers",
         "badge": "Offres limitees",
-        "campaigns": "Campagnes promotionnelles",
+        "campaigns": "Nos promotions",
+        "campaignsBadge": "Campagnes",
+        "selectionBadge": "Selection",
+        "otherOffers": "Autres offres",
+        "active": "Active",
+        "productSingular": "produit",
+        "productsPlural": "produits",
+        "onSale": "en promotion",
+        "noProductsCampaign": "Aucun produit associe a cette campagne.",
+        "viewAll": "Voir tout",
+        "viewAllProducts": "Voir tous les produits",
+        "noPromo": "Aucune promotion en cours",
+        "noPromoSub": "Revenez bientot pour decouvrir nos offres.",
         "from": "Du",
         "to": "au",
         "productsTitle": "Produits en promotion",
-        "noPromo": "Aucune promotion en cours pour le moment.",
-        "endsIn": "Fin de l'offre",
-        "in": "dans"
+        "endsIn": "Fin de",
+        "in": "dans",
+        "heroLine1": "Jusqu'a",
+        "heroHighlight": "-40%",
+        "heroSubtitle": "Sur une selection de refrigerateurs, climatiseurs, televisions et bien plus."
     },
     "about": {
+        "meta": {
+            "title": "A propos — Saffron Electronics CI",
+            "description": "Decouvrez l'histoire de Saffron Electronics, votre specialiste en electromenager a Abidjan depuis plus de 10 ans."
+        },
         "badge": "Notre histoire",
+        "heroLine1": "Plus de",
+        "heroHighlight": "10 ans",
+        "heroLine3": "a votre service",
+        "heroSubtitle": {
+            "before": "Saffron Electronics est la reference incontournable de l'electromenager a Abidjan —",
+            "quality": "qualite",
+            "and1": ", la",
+            "trust": "confiance",
+            "and2": "et le",
+            "service": "service"
+        },
+        "scrollHint": "Decouvrir",
+        "partnerTitleLine1": "Votre partenaire",
+        "partnerTitleHighlight": "de confiance",
+        "valuesBadge": "Ce qui nous definit",
+        "timelineTitleLine1": "Une decennie",
+        "timelineTitleLine2": "d'excellence",
+        "ctaTitleLine1": "Venez nous rendre",
+        "ctaTitleHighlight": "visite a Abidjan",
         "title": "Plus de 10 ans a votre service",
         "subtitle": "Saffron Electronics est ne de la vision de rendre l'electromenager de qualite accessible a tous les foyers ivoiriens.",
         "experience": "Annees d'experience",
@@ -177,34 +295,80 @@
         "maxDiscount": "Max de remise",
         "open": "Ouvert tous les jours",
         "original": "Produits originaux",
+        "checkGuarantee": "Garantie constructeur",
+        "checkOriginal": "Produits 100% originaux",
+        "checkDelivery": "Livraison a domicile",
+        "checkAfterSales": "Service apres-vente",
         "valuesTitle": "Nos valeurs",
-        "valuesSubtitle": "Les principes qui guident chacune de nos actions",
+        "valuesSubtitle": "Les principes qui guident chacune de nos actions, chaque jour.",
         "quality": {
-            "title": "Qualite",
-            "desc": "Nous selectionnons uniquement des produits originaux des meilleures marques mondiales, garantissant performance et durabilite."
+            "title": "Qualite garantie",
+            "desc": "Produits originaux des meilleures marques mondiales, avec garantie constructeur sur tous les articles.",
+            "tag": "100% original"
         },
         "trust": {
-            "title": "Confiance",
-            "desc": "Plus d'une decennie de service loyal aux foyers ivoiriens. Notre reputation est fondee sur l'honnetet et la transparence."
+            "title": "Confiance etablie",
+            "desc": "Plus d'une decennie de service loyal. Reputation fondee sur l'honnetete et la transparence totale.",
+            "tag": "+5 000 clients"
         },
         "service": {
-            "title": "Service",
-            "desc": "De l'accueil en showroom au service apres-vente, notre equipe est toujours disponible pour vous accompagner."
+            "title": "Service complet",
+            "desc": "De l'accueil en showroom au SAV, notre equipe vous accompagne a chaque etape de votre experience.",
+            "tag": "7j/7"
         },
         "price": {
-            "title": "Prix competitifs",
-            "desc": "Nous negocions les meilleurs tarifs pour vous offrir des prix imbattables sans compromis sur la qualite."
-        }
+            "title": "Prix imbattables",
+            "desc": "Meilleurs tarifs negocies directement avec les fournisseurs. Prix competitifs sans compromis sur la qualite.",
+            "tag": "Jusqu'a -40%"
+        },
+        "timelineBadge": "Notre parcours",
+        "timelineTitle": "Une decennie d'excellence",
+        "timeline": {
+            "2013": {
+                "title": "Fondation",
+                "text": "Ouverture du premier point de vente a Abidjan avec une vision claire : democratiser l'acces a l'electromenager de qualite."
+            },
+            "2016": {
+                "title": "Expansion",
+                "text": "Agrandissement du showroom et enrichissement du catalogue avec les plus grandes marques mondiales."
+            },
+            "2019": {
+                "title": "Digital",
+                "text": "Lancement de la boutique en ligne pour toucher toute la Cote d'Ivoire et simplifier l'experience d'achat."
+            },
+            "2024": {
+                "title": "Aujourd'hui",
+                "text": "Reference incontournable de l'electromenager a Abidjan avec plus de 5 000 clients fideles."
+            }
+        },
+        "ctaBadge": "Pret a commencer ?",
+        "ctaTitle": "Venez nous rendre visite a Abidjan",
+        "ctaSubtitle": "Showroom ouvert 7j/7 · Rond-point de la Riviera Palmeraie · Conseils personnalises gratuits",
+        "ctaProducts": "Explorer nos produits",
+        "ctaFind": "Nous trouver"
+    },
+    "contactForm": {
+        "errorName": "Au moins 2 caracteres requis",
+        "errorEmail": "Email invalide",
+        "errorSubject": "Au moins 5 caracteres requis",
+        "errorMessage": "Au moins 20 caracteres requis",
+        "sending": "Envoi en cours..."
     },
     "footer": {
+        "ctaBadge": "Toujours disponible",
+        "ctaTitleLine1": "Votre projet electromenager",
+        "ctaTitleHighlight": "commence ici.",
+        "callNow": "Appeler maintenant",
+        "writeUs": "Nous ecrire",
         "description": "Votre specialiste en electromenager a Abidjan depuis plus de 10 ans. Qualite, service et prix competitifs.",
         "navigation": "Navigation",
         "contact": "Contact",
         "hours": "Horaires",
-        "weekdays": "Lundi - Samedi",
+        "weekdays": "Lun — Sam",
         "sunday": "Dimanche",
         "openNow": "Ouvert maintenant",
         "openUntil": "7j/7 jusqu'a 19h00",
+        "country": "Cote d'Ivoire",
         "rights": "Tous droits reserves."
     },
     "notFound": {

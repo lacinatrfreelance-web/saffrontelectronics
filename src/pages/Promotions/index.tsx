@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import { Clock, Tag, Flame, ArrowRight, Package } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
@@ -29,6 +30,7 @@ const FlipNumber: React.FC<{ value: number }> = ({ value }) => {
 
 // ── Section par campagne ──────────────────────────────────────────────────────
 const PromoCampaignSection: React.FC<{ promo: any; index: number }> = ({ promo, index }) => {
+  const { t } = useTranslation()
   const products: any[] = promo.products ?? []
 
   return (
@@ -51,11 +53,11 @@ const PromoCampaignSection: React.FC<{ promo: any; index: number }> = ({ promo, 
               {promo.is_active && (
                 <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-600 border border-green-100 text-xs font-bold px-2.5 py-1 rounded-full">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Active
+                  {t('promotions.active')}
                 </span>
               )}
               <span className="text-xs text-gray-400">
-                {products.length} produit{products.length > 1 ? 's' : ''}
+                {products.length} {products.length > 1 ? t('promotions.productsPlural') : t('promotions.productSingular')}
               </span>
             </div>
             <h2 className="text-xl font-black text-gray-900">{promo.title}</h2>
@@ -88,7 +90,7 @@ const PromoCampaignSection: React.FC<{ promo: any; index: number }> = ({ promo, 
       ) : (
         <div className="flex items-center gap-3 bg-white border border-dashed border-gray-200 rounded-2xl px-6 py-8 text-gray-400">
           <Package size={20} className="shrink-0 text-gray-300" />
-          <p className="text-sm">Aucun produit associé à cette campagne.</p>
+          <p className="text-sm">{t('promotions.noProductsCampaign')}</p>
         </div>
       )}
     </motion.div>
@@ -97,6 +99,7 @@ const PromoCampaignSection: React.FC<{ promo: any; index: number }> = ({ promo, 
 
 // ── Page principale ───────────────────────────────────────────────────────────
 export const PromotionsPage: React.FC = () => {
+  const { t } = useTranslation()
   const { data: promotions, isLoading: loadingPromos } = usePromotions()
   const { data: saleProducts, isLoading: loadingProducts } = useOnSaleProducts()
   const { data: currentPromo } = useCurrentPromotion()
@@ -111,12 +114,9 @@ export const PromotionsPage: React.FC = () => {
     return () => clearInterval(interval)
   }, [currentPromo])
 
-  // Produits déjà couverts par une campagne (via pivot)
   const campaignProductIds = new Set<number>(
     (promotions ?? []).flatMap((p: any) => (p.products ?? []).map((prod: any) => prod.id))
   )
-
-  // Produits en promo via special_price uniquement (pas liés à une campagne)
   const standalonePromoProducts = (saleProducts ?? []).filter(
     (p: any) => !campaignProductIds.has(p.id)
   )
@@ -130,11 +130,8 @@ export const PromotionsPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Promotions — Saffron Electronics CI</title>
-        <meta
-          name="description"
-          content="Découvrez les promotions en cours chez Saffron Electronics. Jusqu'à 40% de remise sur l'électroménager à Abidjan."
-        />
+        <title>{t('promotions.meta.title')}</title>
+        <meta name="description" content={t('promotions.meta.description')} />
       </Helmet>
 
       {/* ── Hero ── */}
@@ -167,7 +164,7 @@ export const PromotionsPage: React.FC = () => {
               className="inline-flex items-center gap-2 bg-orange-100 border border-orange-200 text-orange-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.15em] mb-8"
             >
               <Flame size={13} fill="currentColor" />
-              Offres limitées
+              {t('promotions.badge')}
             </motion.div>
 
             <motion.h1
@@ -176,9 +173,9 @@ export const PromotionsPage: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="text-6xl md:text-8xl font-black text-gray-900 leading-none mb-6"
             >
-              Jusqu'à<br />
+              {t('promotions.heroLine1')}<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">
-                -40%
+                {t('promotions.heroHighlight')}
               </span>
             </motion.h1>
 
@@ -188,7 +185,7 @@ export const PromotionsPage: React.FC = () => {
               transition={{ delay: 0.45 }}
               className="text-gray-500 text-xl mb-12 max-w-lg"
             >
-              Sur une sélection de réfrigérateurs, climatiseurs, télévisions et bien plus.
+              {t('promotions.heroSubtitle')}
             </motion.p>
 
             {/* Countdown */}
@@ -201,21 +198,21 @@ export const PromotionsPage: React.FC = () => {
                 <div className="flex items-center gap-2 text-gray-400 text-sm font-medium mb-5">
                   <Clock size={14} />
                   <span>
-                    Fin de <strong className="text-gray-700">"{currentPromo.title}"</strong> dans
+                    {t('promotions.endsIn')} <strong className="text-gray-700">"{currentPromo.title}"</strong> {t('promotions.in')}
                   </span>
                 </div>
                 <div className="flex items-end gap-3">
                   {[
-                    { value: countdown.days,    label: 'Jours' },
-                    { value: countdown.hours,   label: 'Heures' },
-                    { value: countdown.minutes, label: 'Min' },
-                    { value: countdown.seconds, label: 'Sec' },
-                  ].map(({ value, label }, i) => (
-                    <React.Fragment key={label}>
+                    { value: countdown.days,    labelKey: 'promo.days'    },
+                    { value: countdown.hours,   labelKey: 'promo.hours'   },
+                    { value: countdown.minutes, labelKey: 'promo.minutes' },
+                    { value: countdown.seconds, labelKey: 'promo.seconds' },
+                  ].map(({ value, labelKey }, i) => (
+                    <React.Fragment key={labelKey}>
                       <div className="flex flex-col items-center gap-2">
                         <FlipNumber value={value} />
                         <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                          {label}
+                          {t(labelKey)}
                         </span>
                       </div>
                       {i < 3 && <span className="text-gray-300 font-black text-2xl pb-7">:</span>}
@@ -234,11 +231,10 @@ export const PromotionsPage: React.FC = () => {
           <div className="container-custom">
             <div className="mb-10">
               <p className="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-2">
-                Campagnes
+                {t('promotions.campaignsBadge')}
               </p>
-              <h2 className="text-4xl font-black text-gray-900">Nos promotions</h2>
+              <h2 className="text-4xl font-black text-gray-900">{t('promotions.campaigns')}</h2>
             </div>
-
             {promotions.map((promo: any, i: number) => (
               <PromoCampaignSection key={promo.id} promo={promo} index={i} />
             ))}
@@ -253,18 +249,18 @@ export const PromotionsPage: React.FC = () => {
             <div className="flex items-end justify-between mb-10">
               <div>
                 <p className="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-2">
-                  Sélection
+                  {t('promotions.selectionBadge')}
                 </p>
-                <h2 className="text-4xl font-black text-gray-900">Autres offres</h2>
+                <h2 className="text-4xl font-black text-gray-900">{t('promotions.otherOffers')}</h2>
                 <p className="text-gray-400 mt-2 text-sm">
-                  {standalonePromoProducts.length} produit{standalonePromoProducts.length > 1 ? 's' : ''} en promotion
+                  {standalonePromoProducts.length} {standalonePromoProducts.length > 1 ? t('promotions.productsPlural') : t('promotions.productSingular')} {t('promotions.onSale')}
                 </p>
               </div>
               <Link
                 to="/products?is_promotion=true"
                 className="hidden md:flex items-center gap-1.5 text-sm font-bold text-orange-500 hover:text-orange-600"
               >
-                Voir tout <ArrowRight size={14} />
+                {t('promotions.viewAll')} <ArrowRight size={14} />
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -291,13 +287,13 @@ export const PromotionsPage: React.FC = () => {
             <div className="w-20 h-20 bg-amber-50 border border-amber-100 rounded-3xl flex items-center justify-center mx-auto mb-6">
               <Tag size={32} className="text-amber-400" />
             </div>
-            <h2 className="text-2xl font-black text-gray-900 mb-3">Aucune promotion en cours</h2>
-            <p className="text-gray-400 mb-8">Revenez bientôt pour découvrir nos offres.</p>
+            <h2 className="text-2xl font-black text-gray-900 mb-3">{t('promotions.noPromo')}</h2>
+            <p className="text-gray-400 mb-8">{t('promotions.noPromoSub')}</p>
             <Link
               to="/products"
               className="inline-flex items-center gap-2 bg-orange-500 text-white font-bold px-6 py-3 rounded-full hover:bg-orange-600 transition-colors"
             >
-              Voir tous les produits <ArrowRight size={16} />
+              {t('promotions.viewAllProducts')} <ArrowRight size={16} />
             </Link>
           </div>
         </section>

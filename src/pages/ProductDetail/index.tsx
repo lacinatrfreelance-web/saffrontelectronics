@@ -1,7 +1,7 @@
-// ─── ProductDetailPage.tsx ───────────────────────────────────────────────────
 import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, Phone, MessageSquare, Package, Tag, CheckCircle, ChevronRight, ZoomIn } from 'lucide-react'
 import { useProduct, useRelatedProducts } from '@/hooks/useProducts'
@@ -10,6 +10,7 @@ import { formatPrice, getImageUrl } from '@/utils/formatters'
 import { COMPANY } from '@/utils/constants'
 
 export const ProductDetailPage: React.FC = () => {
+  const { t } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
   const [activeImage, setActiveImage] = useState(0)
   const [activeTab, setActiveTab] = useState<'description' | 'specs'>('description')
@@ -39,23 +40,22 @@ export const ProductDetailPage: React.FC = () => {
     return (
       <div className="bg-gray-50 min-h-screen pt-28">
         <div className="container-custom py-20 text-center">
-          <p className="text-gray-400 mb-5 text-lg">Produit non trouvé</p>
+          <p className="text-gray-400 mb-5 text-lg">{t('productDetail.notFound')}</p>
           <Link
             to="/products"
             className="inline-flex items-center gap-2 bg-gray-900 text-white font-bold px-6 py-3 rounded-2xl hover:bg-orange-500 transition-colors"
           >
-            Retour aux produits
+            {t('productDetail.back')}
           </Link>
         </div>
       </div>
     )
   }
 
-  // ✅ Utilise `images` qui contient maintenant des URLs complètes via ProductResource
   const images: string[] = product.images?.length > 0 ? product.images : []
   const hasPromo = product.is_promotion && product.promotional_price
   const whatsappMsg = encodeURIComponent(
-    `Bonjour, je suis interesse par: ${product.name} (${formatPrice(product.final_price)}). Pouvez-vous me donner plus d'informations ?`
+    `${t('productDetail.whatsappMessage')} ${product.name} (${formatPrice(product.final_price)}). ${t('productDetail.whatsappQuestion')}`
   )
 
   return (
@@ -70,9 +70,9 @@ export const ProductDetailPage: React.FC = () => {
         <div className="bg-white border-b border-gray-100 pt-20">
           <div className="container-custom py-4">
             <nav className="flex items-center gap-2 text-xs text-gray-400">
-              <Link to="/" className="hover:text-orange-500 transition-colors font-medium">Accueil</Link>
+              <Link to="/" className="hover:text-orange-500 transition-colors font-medium">{t('productDetail.home')}</Link>
               <ChevronRight size={12} />
-              <Link to="/products" className="hover:text-orange-500 transition-colors font-medium">Produits</Link>
+              <Link to="/products" className="hover:text-orange-500 transition-colors font-medium">{t('nav.products')}</Link>
               <ChevronRight size={12} />
               <span className="text-gray-700 font-semibold truncate max-w-xs">{product.name}</span>
             </nav>
@@ -85,7 +85,7 @@ export const ProductDetailPage: React.FC = () => {
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-400 hover:text-orange-500 mb-8 transition-colors group"
           >
             <ChevronLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
-            Retour aux produits
+            {t('productDetail.back')}
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
@@ -99,14 +99,10 @@ export const ProductDetailPage: React.FC = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.97 }}
                     transition={{ duration: 0.25 }}
-                    // ✅ getImageUrl reçoit déjà une URL complète depuis ProductResource
                     src={getImageUrl(images[activeImage])}
                     alt={product.name}
                     className="w-full h-full object-contain p-8"
-                    onError={(e) => {
-                      // ✅ Fallback local, plus de via.placeholder.com
-                      (e.target as HTMLImageElement).src = '/placeholder.jpg'
-                    }}
+                    onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.jpg' }}
                   />
                 </AnimatePresence>
 
@@ -152,7 +148,7 @@ export const ProductDetailPage: React.FC = () => {
               <div className="flex flex-wrap gap-2 mb-5">
                 {product.is_new && (
                   <span className="bg-amber-50 border border-amber-200 text-amber-600 text-xs font-black px-3 py-1.5 rounded-xl">
-                    NOUVEAU
+                    {t('products.new')}
                   </span>
                 )}
                 <span className={`text-xs font-black px-3 py-1.5 rounded-xl border ${
@@ -160,7 +156,7 @@ export const ProductDetailPage: React.FC = () => {
                     ? 'bg-emerald-50 border-emerald-200 text-emerald-600'
                     : 'bg-red-50 border-red-200 text-red-500'
                 }`}>
-                  {product.stock > 0 ? 'EN STOCK' : 'RUPTURE DE STOCK'}
+                  {product.stock > 0 ? t('products.inStock') : t('products.rupture')}
                 </span>
               </div>
 
@@ -175,13 +171,13 @@ export const ProductDetailPage: React.FC = () => {
                 {product.brand && (
                   <span className="flex items-center gap-1.5 bg-gray-100 text-gray-500 font-semibold px-3 py-1.5 rounded-xl">
                     <Tag size={11} className="text-orange-400" />
-                    {product.brand}
+                    {t('productDetail.brand')} : {product.brand}
                   </span>
                 )}
                 {product.reference && (
                   <span className="flex items-center gap-1.5 bg-gray-100 text-gray-500 font-semibold px-3 py-1.5 rounded-xl">
                     <Package size={11} className="text-orange-400" />
-                    {product.reference}
+                    {t('productDetail.ref')} : {product.reference}
                   </span>
                 )}
               </div>
@@ -199,7 +195,10 @@ export const ProductDetailPage: React.FC = () => {
                 {hasPromo && (
                   <div className="flex items-center gap-2">
                     <span className="bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-black px-2.5 py-1 rounded-lg">
-                      Economie de {formatPrice(product.price - product.final_price)}
+                      {t('productDetail.savings', {
+                        amount: formatPrice(product.price - product.final_price),
+                        percent: product.discount_percentage,
+                      })}
                     </span>
                   </div>
                 )}
@@ -214,7 +213,7 @@ export const ProductDetailPage: React.FC = () => {
                   className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black py-4 px-6 rounded-2xl shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-shadow text-sm"
                 >
                   <Phone size={17} />
-                  Appeler pour commander
+                  {t('productDetail.callOrder')}
                 </motion.a>
                 <motion.a
                   href={`https://wa.me/${COMPANY.phone.replace(/\s+/g, '').replace('+', '')}?text=${whatsappMsg}`}
@@ -225,19 +224,19 @@ export const ProductDetailPage: React.FC = () => {
                   className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-black py-4 px-6 rounded-2xl shadow-xl shadow-green-500/20 hover:shadow-green-500/35 transition-shadow text-sm"
                 >
                   <MessageSquare size={17} />
-                  WhatsApp
+                  {t('productDetail.whatsapp')}
                 </motion.a>
               </div>
 
               {/* Reassurance */}
               <div className="flex flex-col gap-2.5">
                 {[
-                  'Garantie constructeur incluse',
-                  'Produit 100% original certifié',
+                  t('productDetail.guarantee'),
+                  t('productDetail.original'),
                   product.stock > 0
                     ? product.stock <= 5
-                      ? `Plus que ${product.stock} en stock`
-                      : 'Disponible immédiatement en showroom'
+                      ? t('productDetail.lowStockMsg', { count: product.stock })
+                      : t('productDetail.inShowroom')
                     : null,
                 ]
                   .filter(Boolean)
@@ -262,7 +261,7 @@ export const ProductDetailPage: React.FC = () => {
                     activeTab === tab ? 'text-orange-500' : 'text-gray-400 hover:text-gray-700'
                   }`}
                 >
-                  {tab === 'description' ? 'Description' : 'Spécifications'}
+                  {tab === 'description' ? t('productDetail.description') : t('productDetail.specifications')}
                   {activeTab === tab && (
                     <motion.span
                       layoutId="tabIndicator"
@@ -276,7 +275,7 @@ export const ProductDetailPage: React.FC = () => {
               {activeTab === 'description' ? (
                 <div
                   className="prose prose-sm max-w-none text-gray-500 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: product.description || '<p>Aucune description disponible.</p>' }}
+                  dangerouslySetInnerHTML={{ __html: product.description || `<p>${t('productDetail.noDesc')}</p>` }}
                 />
               ) : product.specifications && Object.keys(product.specifications).length > 0 ? (
                 <table className="w-full text-sm">
@@ -290,7 +289,7 @@ export const ProductDetailPage: React.FC = () => {
                   </tbody>
                 </table>
               ) : (
-                <p className="text-gray-400">Aucune spécification disponible.</p>
+                <p className="text-gray-400">{t('productDetail.noSpecs')}</p>
               )}
             </div>
           </div>
@@ -298,8 +297,10 @@ export const ProductDetailPage: React.FC = () => {
           {/* ── Related ── */}
           {related && related.length > 0 && (
             <div>
-              <p className="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-3">Vous aimerez aussi</p>
-              <h2 className="text-3xl font-black text-gray-900 mb-8">Produits similaires</h2>
+              <p className="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-3">
+                {t('productDetail.relatedBadge')}
+              </p>
+              <h2 className="text-3xl font-black text-gray-900 mb-8">{t('productDetail.related')}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 {related.map((p, i) => (
                   <motion.div

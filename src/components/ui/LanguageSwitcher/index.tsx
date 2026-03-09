@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import i18n from '@/i18n' // IMPORTEZ VOTRE INSTANCE i18n (ajustez le chemin)
+import i18n from '@/i18n' 
 import { ChevronDown, Globe } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 

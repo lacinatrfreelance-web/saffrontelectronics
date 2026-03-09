@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import { Hero } from '@/components/sections/Hero'
 import { CategoriesGrid } from '@/components/sections/CategoriesGrid'
 import { FeaturedProducts } from '@/components/sections/FeaturedProducts'
@@ -86,39 +87,39 @@ const Counter: React.FC<{ to: number; suffix?: string; duration?: number }> = ({
 }
 
 export const HomePage: React.FC = () => {
+  const { t } = useTranslation()
   const { data: homeData, isLoading } = useHomeData()
   const statsRef = useRef<HTMLDivElement>(null)
   const statsInView = useInView(statsRef, { once: true, margin: '-80px' })
 
-  // Enregistre une vue sur la page d'accueil
   usePageView('home')
 
   const STATS = [
-    { value: 10, suffix: '+', label: "Annees d'experience", sub: 'Sur le marche ivoirien' },
-    { value: 5000, suffix: '+', label: 'Clients satisfaits', sub: 'Font confiance a Saffron' },
-    { value: 500, suffix: '+', label: 'Produits', sub: 'En catalogue permanent' },
-    { value: 40, suffix: '%', label: 'Jusqu\'a -40%', sub: 'Sur les promotions actives' },
+    { value: 10,   suffix: '+', label: t('home.stats.experienceLabel'), sub: t('home.stats.experienceSub') },
+    { value: 5000, suffix: '+', label: t('home.stats.clientsLabel'),    sub: t('home.stats.clientsSub')    },
+    { value: 500,  suffix: '+', label: t('home.stats.productsLabel'),   sub: t('home.stats.productsSub')   },
+    { value: 40,   suffix: '%', label: t('home.stats.promoLabel'),      sub: t('home.stats.promoSub')      },
   ]
 
   const contactItems = [
     {
       icon: Phone,
-      label: 'Appelez-nous',
+      label: t('home.contact.phoneLabel'),
       value: COMPANY.phone,
       href: `tel:${COMPANY.phone}`,
       color: 'orange',
     },
     {
       icon: Clock,
-      label: 'Horaires',
-      value: 'Lun–Sam 8h–19h · Dim 9h–19h',
+      label: t('home.contact.hoursLabel'),
+      value: t('home.contact.hoursValue'),
       href: null,
       color: 'emerald',
     },
     {
       icon: MapPin,
-      label: 'Showroom',
-      value: 'Riviera Palmeraie, Abidjan',
+      label: t('home.contact.showroomLabel'),
+      value: t('home.contact.showroomValue'),
       href: null,
       color: 'blue',
     },
@@ -133,8 +134,8 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Saffron Electronics CI — Electromenager Abidjan</title>
-        <meta name="description" content="Votre specialiste en electromenager a Abidjan. Refrigerateurs, climatiseurs, televisions, machines a laver. Promotions jusqu'a 40%." />
+        <title>{t('home.meta.title')}</title>
+        <meta name="description" content={t('home.meta.description')} />
       </Helmet>
 
       <Hero />
@@ -145,7 +146,6 @@ export const HomePage: React.FC = () => {
       {/* Animated Stats section */}
       <section className="py-20 bg-gray-950 relative overflow-hidden" ref={statsRef}>
         <ParticleField />
-        {/* Glowing orb top-right */}
         <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container-custom relative z-10">
@@ -155,13 +155,15 @@ export const HomePage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <p className="text-xs font-black text-orange-400 uppercase tracking-[0.25em] mb-3">Nos chiffres</p>
+            <p className="text-xs font-black text-orange-400 uppercase tracking-[0.25em] mb-3">
+              {t('home.stats.sectionBadge')}
+            </p>
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-              La reference<br />
+              {t('home.stats.sectionTitleLine1')}<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-                electromenager
+                {t('home.stats.sectionTitleHighlight')}
               </span>
-              {' '}a Abidjan
+              {' '}{t('home.stats.sectionTitleLine2')}
             </h2>
           </motion.div>
 
@@ -175,9 +177,7 @@ export const HomePage: React.FC = () => {
                 whileHover={{ y: -6, scale: 1.02 }}
                 className="group relative overflow-hidden bg-white/5 border border-white/8 rounded-3xl p-7 cursor-default"
               >
-                {/* Hover gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/8 to-amber-400/4 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-3xl" />
-
                 <div className="relative z-10">
                   <div className="text-5xl font-black text-white mb-2 leading-none">
                     <Counter to={stat.value} suffix={stat.suffix} />
@@ -185,8 +185,6 @@ export const HomePage: React.FC = () => {
                   <p className="text-sm font-bold text-orange-400 mb-1">{stat.label}</p>
                   <p className="text-xs text-white/30">{stat.sub}</p>
                 </div>
-
-                {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-orange-500/15 to-transparent rounded-bl-3xl" />
               </motion.div>
             ))}
@@ -195,35 +193,43 @@ export const HomePage: React.FC = () => {
       </section>
 
       <FeaturedProducts
-        title="Produits en vedette"
-        subtitle="Notre selection de produits incontournables"
+        title={t('featured.title')}
+        subtitle={t('featured.subtitle')}
         products={homeData?.featured_products || []}
         isLoading={isLoading}
         viewAllLink="/products?is_featured=true"
-        viewAllLabel="Tous les produits"
+        viewAllLabel={t('featured.viewAll')}
       />
 
       <FeaturedProducts
-        title="Nouveautes"
-        subtitle="Les derniers arrivages dans notre showroom"
+        title={t('featured.newTitle')}
+        subtitle={t('featured.newSubtitle')}
         products={homeData?.new_products || []}
         isLoading={isLoading}
         viewAllLink="/products?is_new=true"
-        viewAllLabel="Toutes les nouveautes"
+        viewAllLabel={t('featured.viewAllNew')}
       />
 
       <WhyUs />
 
-      {/* Contact rapide — editorial layout */}
+      {/* Contact rapide */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-2">Toujours la</p>
-              <h2 className="text-3xl font-black text-gray-900">Retrouvez-nous</h2>
+              <p className="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-2">
+                {t('home.contact.sectionBadge')}
+              </p>
+              <h2 className="text-3xl font-black text-gray-900">
+                {t('home.contact.sectionTitle')}
+              </h2>
             </div>
-            <a href={`tel:${COMPANY.phone}`} className="group inline-flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-orange-500 transition-colors">
-              Appeler directement <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            <a
+              href={`tel:${COMPANY.phone}`}
+              className="group inline-flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-orange-500 transition-colors"
+            >
+              {t('home.contact.callLink')}
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 
@@ -232,8 +238,10 @@ export const HomePage: React.FC = () => {
               const cardClass = `group relative overflow-hidden rounded-3xl p-7 border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${colorMap[color]}`
               const inner = (
                 <>
-                  <div className="absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20"
-                    style={{ background: `radial-gradient(circle at top right, currentColor, transparent)` }} />
+                  <div
+                    className="absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-20"
+                    style={{ background: 'radial-gradient(circle at top right, currentColor, transparent)' }}
+                  />
                   <Icon size={24} className="mb-5 relative z-10" />
                   <p className="text-xs font-black uppercase tracking-[0.18em] opacity-60 mb-1.5 relative z-10">{label}</p>
                   <p className="font-bold text-gray-900 text-sm leading-snug relative z-10">{value}</p>
