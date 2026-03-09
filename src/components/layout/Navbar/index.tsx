@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
   useEffect(() => { setIsOpen(false) }, [location])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-2' : 'py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-1' : 'py-3'}`}>
       <div className={`absolute inset-0 transition-all duration-500 ${
         scrolled ? 'bg-white/92 backdrop-blur-2xl shadow-[0_1px_0_rgba(0,0,0,0.06),0_8px_32px_rgba(0,0,0,0.06)]' : 'bg-transparent'
       }`} />
@@ -39,17 +39,32 @@ export const Navbar: React.FC = () => {
       <div className="container-custom relative z-10">
         <div className="flex items-center justify-between">
 
-          {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          {/* Logo + avatars */}
+          <Link to="/" className="flex flex-col items-start group">
             <motion.img
               src={logo}
               alt="Saffron Electronics CI"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               className={`object-contain transition-all duration-300 ${
-                scrolled ? 'h-14' : 'h-16'
+                scrolled ? 'h-16' : 'h-20'
               }`}
             />
+            {/* Social proof avatars — desktop only */}
+            <div className="hidden md:flex items-center gap-2 -mt-1 pl-1">
+              <div className="flex -space-x-1.5">
+                {(['#F97316','#FBBF24','#34D399','#818CF8','#FB7185'] as const).map((bg, i) => (
+                  <div
+                    key={i}
+                    className="w-5 h-5 rounded-full border-2 border-white flex items-center justify-center text-white text-[8px] font-black"
+                    style={{ backgroundColor: bg, zIndex: 5 - i }}
+                  >
+                    {['A','K','S','M','F'][i]}
+                  </div>
+                ))}
+              </div>
+              <span className="text-[10px] font-semibold text-gray-400">+5 000 clients</span>
+            </div>
           </Link>
 
           {/* Desktop Nav with hover pill */}

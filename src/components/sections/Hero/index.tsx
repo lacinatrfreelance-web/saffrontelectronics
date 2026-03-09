@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  ArrowRight, Zap, ShieldCheck, Star,
-  Wind, Thermometer, Tv, Shirt, MapPin,
+  ArrowRight, Zap, ShieldCheck,
+  Wind, Thermometer, Tv, Shirt,
 } from 'lucide-react'
 import { useCategories } from '@/hooks/useCategories'
 import { getImageUrl } from '@/utils/formatters'
@@ -103,7 +103,6 @@ const CategoryCard: React.FC<{ category: any; colorIndex: number; floatDelay: nu
 // ─── Animated word cycler ─────────────────────────────────────────────────────
 const WordCycler: React.FC = () => {
   const { t } = useTranslation()
-  // Les mots cycliques sont traduits
   const words = [
     t('hero.cyclingWord1'),
     t('hero.cyclingWord2'),
@@ -170,29 +169,7 @@ export const Hero: React.FC = () => {
           {/* ── LEFT ── */}
           <motion.div variants={stagger} initial="hidden" animate="visible">
 
-            {/* Social proof */}
-            <motion.div variants={fadeUp} className="flex items-center gap-4 mb-10">
-              <div className="flex -space-x-2.5 shrink-0">
-                {['#F97316','#FBBF24','#34D399','#818CF8','#FB7185'].map((bg, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-white text-[10px] font-black" style={{ backgroundColor: bg, zIndex: 5 - i }}>
-                    {['A','K','S','M','F'][i]}
-                  </div>
-                ))}
-              </div>
-              <div className="w-px h-8 bg-gray-200 shrink-0" />
-              <div>
-                <div className="flex items-center gap-0.5 mb-0.5">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={11} className="text-amber-400 fill-amber-400" />)}
-                  <span className="text-xs font-black text-gray-800 ml-1.5">4.9</span>
-                </div>
-                <div className="flex items-center gap-1 text-xs text-gray-400 font-medium">
-                  <MapPin size={10} className="text-orange-400 shrink-0" />
-                  {t('hero.socialProof')}
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Headline */}
+            {/* Eyebrow badge */}
             <motion.div variants={fadeUp} className="mb-8">
               <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 rounded-full px-3.5 py-1.5 mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
