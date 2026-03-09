@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { Eye, TrendingUp, TrendingDown, Calendar, RefreshCw, Activity } from 'lucide-react'
 import {
-  AreaChart, Area,
   BarChart, Bar,
   XAxis, YAxis,
   CartesianGrid, Tooltip,
@@ -74,7 +73,7 @@ const ChartTooltip = ({ active, payload, label, labelFn }: any) => {
 
 // ─── KPI Card ─────────────────────────────────────────────────────────────────
 
-function KpiCard({ icon: Icon, label, value, bg, iconColor, sub, trend }: {
+function KpiCard({ icon: Icon, label, value, bg, sub, trend }: {
   icon: React.ElementType
   label: string
   value: string | number
@@ -91,17 +90,8 @@ function KpiCard({ icon: Icon, label, value, bg, iconColor, sub, trend }: {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* decorative circle */}
-      <div style={{
-        position: 'absolute', top: -20, right: -20,
-        width: 80, height: 80, borderRadius: '50%',
-        background: 'rgba(255,255,255,0.15)',
-      }} />
-      <div style={{
-        position: 'absolute', top: -40, right: -10,
-        width: 80, height: 80, borderRadius: '50%',
-        background: 'rgba(255,255,255,0.08)',
-      }} />
+      <div style={{ position: 'absolute', top: -20, right: -20, width: 80, height: 80, borderRadius: '50%', background: 'rgba(255,255,255,0.15)' }} />
+      <div style={{ position: 'absolute', top: -40, right: -10, width: 80, height: 80, borderRadius: '50%', background: 'rgba(255,255,255,0.08)' }} />
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
         <div style={{
@@ -115,8 +105,7 @@ function KpiCard({ icon: Icon, label, value, bg, iconColor, sub, trend }: {
           <div style={{
             display: 'flex', alignItems: 'center', gap: 3,
             fontSize: 11, fontWeight: 700,
-            background: 'rgba(255,255,255,0.25)',
-            color: 'white',
+            background: 'rgba(255,255,255,0.25)', color: 'white',
             padding: '3px 8px', borderRadius: 20,
           }}>
             {trend >= 0 ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
@@ -139,11 +128,20 @@ function KpiCard({ icon: Icon, label, value, bg, iconColor, sub, trend }: {
 // ─── Period Selector ──────────────────────────────────────────────────────────
 
 type Period = 'day' | 'week' | 'month'
-const PERIODS: { key: Period; label: string; icon: string }[] = [
-  { key: 'day',   label: 'Jour',    icon: '◦' },
-  { key: 'week',  label: 'Semaine', icon: '◦◦' },
-  { key: 'month', label: 'Mois',    icon: '◦◦◦' },
+const PERIODS: { key: Period; label: string }[] = [
+  { key: 'day',   label: 'Jour'    },
+  { key: 'week',  label: 'Semaine' },
+  { key: 'month', label: 'Mois'    },
 ]
+
+// ─── Shared bar config per period ─────────────────────────────────────────────
+
+const BAR_SIZE: Record<Period, number> = { day: 10, week: 32, month: 44 }
+const BAR_RADIUS: Record<Period, [number, number, number, number]> = {
+  day:   [4, 4, 2, 2],
+  week:  [8, 8, 3, 3],
+  month: [10, 10, 3, 3],
+}
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
@@ -179,15 +177,11 @@ export const HomeViewStats: React.FC<HomeViewStatsProps> = ({ days = 90 }) => {
     return (
       <div style={{ background: 'white', borderRadius: 24, padding: 28, border: '1px solid #f1f5f9' }}>
         <style>{`@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}`}</style>
-        {[1].map(i => (
-          <div key={i}>
-            <div style={{ height: 22, width: 200, borderRadius: 8, marginBottom: 20, background: 'linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 20 }}>
-              {[0,1,2].map(j => <div key={j} style={{ height: 110, borderRadius: 20, background: 'linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%)', backgroundSize: '200% 100%', animation: `shimmer 1.4s ${j*0.15}s infinite` }} />)}
-            </div>
-            <div style={{ height: 220, borderRadius: 16, background: 'linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
-          </div>
-        ))}
+        <div style={{ height: 22, width: 200, borderRadius: 8, marginBottom: 20, background: 'linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 20 }}>
+          {[0,1,2].map(j => <div key={j} style={{ height: 110, borderRadius: 20, background: 'linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%)', backgroundSize: '200% 100%', animation: `shimmer 1.4s ${j*0.15}s infinite` }} />)}
+        </div>
+        <div style={{ height: 220, borderRadius: 16, background: 'linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
       </div>
     )
   }
@@ -316,111 +310,71 @@ export const HomeViewStats: React.FC<HomeViewStatsProps> = ({ days = 90 }) => {
           </div>
         </div>
 
-        {/* Charts */}
+        {/* Histogram — same BarChart for all periods */}
         <div style={{
           background: '#fafafa', borderRadius: 16,
           padding: '16px 8px 8px',
           border: '1px solid #f8fafc',
         }}>
-          {/* DAY — Area chart */}
-          {period === 'day' && (
-            <ResponsiveContainer width="100%" height={210}>
-              <AreaChart data={chartData} margin={{ top: 4, right: 16, left: -12, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%"   stopColor="#f97316" stopOpacity={0.2} />
-                    <stop offset="100%" stopColor="#f97316" stopOpacity={0.01} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid stroke="#f1f5f9" strokeDasharray="0" vertical={false} />
-                <XAxis
-                  dataKey="date" tickFormatter={shortDay}
-                  tick={{ fill: '#d1d5db', fontSize: 10, fontWeight: 600 }}
-                  axisLine={false} tickLine={false}
-                  interval={Math.max(0, Math.floor(chartData.length / 7) - 1)}
-                />
-                <YAxis
-                  tick={{ fill: '#d1d5db', fontSize: 10 }}
-                  axisLine={false} tickLine={false}
-                  tickFormatter={fmt} allowDecimals={false}
-                />
-                <Tooltip content={<ChartTooltip labelFn={shortDay} />} />
-                <Area
-                  type="monotone" dataKey="count"
-                  stroke="#f97316" strokeWidth={2.5}
-                  fill="url(#areaGrad)" dot={false}
-                  activeDot={{ r: 5, fill: '#f97316', stroke: 'white', strokeWidth: 2.5 }}
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          )}
-
-          {/* WEEK — Bar chart with intensity shading */}
-          {period === 'week' && (
-            <ResponsiveContainer width="100%" height={210}>
-              <BarChart data={chartData} margin={{ top: 4, right: 16, left: -12, bottom: 0 }} barSize={32}>
-                <CartesianGrid stroke="#f1f5f9" vertical={false} />
-                <XAxis
-                  dataKey="date" tickFormatter={weekLabel}
-                  tick={{ fill: '#d1d5db', fontSize: 10, fontWeight: 600 }}
-                  axisLine={false} tickLine={false}
-                />
-                <YAxis
-                  tick={{ fill: '#d1d5db', fontSize: 10 }}
-                  axisLine={false} tickLine={false}
-                  tickFormatter={fmt} allowDecimals={false}
-                />
-                <Tooltip content={<ChartTooltip labelFn={weekLabel} />} />
-                <Bar dataKey="count" radius={[8, 8, 3, 3]}>
-                  {chartData.map((entry, i) => {
-                    const ratio = maxCount > 0 ? entry.count / maxCount : 0
-                    return (
-                      <Cell key={i}
-                        fill={i === chartData.length - 1
-                          ? '#f97316'
-                          : `rgba(249,115,22,${0.2 + ratio * 0.55})`}
-                      />
-                    )
-                  })}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          )}
-
-          {/* MONTH — Bar chart with gradient highlight on current */}
-          {period === 'month' && (
-            <ResponsiveContainer width="100%" height={210}>
-              <BarChart data={chartData} margin={{ top: 4, right: 16, left: -12, bottom: 0 }} barSize={44}>
-                <defs>
-                  <linearGradient id="curMonthGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%"   stopColor="#f97316" />
-                    <stop offset="100%" stopColor="#fdba74" />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid stroke="#f1f5f9" vertical={false} />
-                <XAxis
-                  dataKey="date" tickFormatter={monthLabel}
-                  tick={{ fill: '#d1d5db', fontSize: 10, fontWeight: 600 }}
-                  axisLine={false} tickLine={false}
-                />
-                <YAxis
-                  tick={{ fill: '#d1d5db', fontSize: 10 }}
-                  axisLine={false} tickLine={false}
-                  tickFormatter={fmt} allowDecimals={false}
-                />
-                <Tooltip content={<ChartTooltip labelFn={monthLabel} />} />
-                <Bar dataKey="count" radius={[10, 10, 3, 3]}>
-                  {chartData.map((entry, i) => (
-                    <Cell key={i}
-                      fill={i === chartData.length - 1
-                        ? 'url(#curMonthGrad)'
-                        : 'rgba(249,115,22,0.22)'}
+          <ResponsiveContainer width="100%" height={period === 'day' ? 230 : 210}>
+            <BarChart
+              data={chartData}
+              margin={{ top: period === 'day' ? 20 : 4, right: 16, left: -12, bottom: period === 'day' ? 16 : 0 }}
+              barSize={BAR_SIZE[period]}
+            >
+              <defs>
+                <linearGradient id="barGradCurrent" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"   stopColor="#f97316" />
+                  <stop offset="100%" stopColor="#fdba74" />
+                </linearGradient>
+              </defs>
+              <CartesianGrid stroke="#f1f5f9" vertical={false} />
+              <XAxis
+                dataKey="date"
+                tickFormatter={labelFn}
+                tick={{ fill: '#d1d5db', fontSize: 10, fontWeight: 600 }}
+                axisLine={false}
+                tickLine={false}
+                interval={
+                  period === 'day'
+                    ? Math.max(0, Math.floor(chartData.length / 7) - 1)
+                    : 0
+                }
+              />
+              <YAxis
+                tick={{ fill: '#d1d5db', fontSize: 10 }}
+                axisLine={false}
+                tickLine={false}
+                tickFormatter={fmt}
+                allowDecimals={false}
+              />
+              <Tooltip content={<ChartTooltip labelFn={labelFn} />} />
+              <Bar
+                dataKey="count"
+                radius={BAR_RADIUS[period]}
+                label={period === 'day' ? {
+                  position: 'top',
+                  formatter: (v: number) => v > 0 ? fmt(v) : '',
+                  fill: '#f97316',
+                  fontSize: 9,
+                  fontWeight: 800,
+                } : false}
+              >
+                {chartData.map((entry, i) => {
+                  const isLast = i === chartData.length - 1
+                  const ratio = maxCount > 0 ? entry.count / maxCount : 0
+                  return (
+                    <Cell
+                      key={i}
+                      fill={isLast
+                        ? 'url(#barGradCurrent)'
+                        : `rgba(249,115,22,${0.45 + ratio * 0.45})`}
                     />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          )}
+                  )
+                })}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
         </div>
 
         {/* ── Mini sparkline footer — last 7 entries ── */}
@@ -428,9 +382,9 @@ export const HomeViewStats: React.FC<HomeViewStatsProps> = ({ days = 90 }) => {
           <span style={{ fontSize: 10, color: '#d1d5db', fontWeight: 600, marginRight: 4, whiteSpace: 'nowrap' }}>
             7 derniers
           </span>
-          {chartData.slice(-7).map((d, i) => {
+          {chartData.slice(-7).map((d, i, arr) => {
             const h = maxCount > 0 ? Math.max(6, (d.count / maxCount) * 44) : 6
-            const isLast = i === Math.min(6, chartData.length - 1)
+            const isLast = i === arr.length - 1
             return (
               <div key={i} title={`${labelFn(d.date)}: ${d.count} vues`}
                 style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
