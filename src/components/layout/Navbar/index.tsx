@@ -5,7 +5,7 @@ import { Menu, X, Phone, ChevronRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { COMPANY } from '@/utils/constants'
 import { LanguageSwitcher } from '../../../components/ui/LanguageSwitcher'
-import logo from '@/assets/logoo_saffron-removebg-preview.png'
+import logo from '@/assets/logo_saffron.png'
 
 const NAV_LINKS = [
   { to: '/', labelKey: 'nav.home' },
