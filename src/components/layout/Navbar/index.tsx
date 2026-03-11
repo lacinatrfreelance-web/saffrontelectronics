@@ -5,7 +5,7 @@ import { Menu, X, Phone, ChevronRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { COMPANY } from '@/utils/constants'
 import { LanguageSwitcher } from '../../../components/ui/LanguageSwitcher'
-import logo from '@/assets/logo_saffron.png'
+import logo from '@/assets/logo_saffron.png' 
 
 const NAV_LINKS = [
   { to: '/', labelKey: 'nav.home' },
@@ -15,12 +15,12 @@ const NAV_LINKS = [
   { to: '/contact', labelKey: 'nav.contact' },
 ]
 
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {    
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [hovered, setHovered] = useState<string | null>(null)
   const location = useLocation()
-  const { t } = useTranslation()
+  const { t } = useTranslation()  
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)

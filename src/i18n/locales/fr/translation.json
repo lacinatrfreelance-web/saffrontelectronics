@@ -3,29 +3,29 @@
         "home": "Accueil",
         "products": "Produits",
         "promotions": "Promotions",
-        "about": "A propos",
+        "about": "À propos",
         "contact": "Contact",
         "contactUs": "Nous contacter"
     },
     "hero": {
-        "badge": "Plus de 10 ans d'experience a Abidjan",
-        "eyebrow": "N°1 a Abidjan",
-        "titleLine1": "L'electro-",
-        "titleLine2": "menager",
+        "badge": "Plus de 10 ans d'expérience à Abidjan",
+        "eyebrow": "N°1 à Abidjan",
+        "titleLine1": "L'électro-",
+        "titleLine2": "ménager",
         "titleLine3Prefix": "toujours",
         "cyclingWord1": "performant",
         "cyclingWord2": "garanti",
-        "cyclingWord3": "livre",
+        "cyclingWord3": "livré",
         "cyclingWord4": "accessible",
         "socialProof": "+5 000 clients satisfaits · Abidjan",
-        "subtitlePrefix": "Refrigerateurs, climatiseurs, televisions et bien plus —",
+        "subtitlePrefix": "Réfrigérateurs, climatiseurs, télévisions et bien plus —",
         "subtitleGuarantee": "garantie constructeur",
-        "subtitleMid": "et promotions jusqu'a",
+        "subtitleMid": "et promotions jusqu'à",
         "subtitleDiscount": "40% de remise",
-        "discountBadge": "Jusqu'a -40% de remise",
-        "title": "L'electromenager de qualite a Abidjan",
-        "titleHighlight": "de qualite",
-        "subtitle": "Refrigerateurs, climatiseurs, machines a laver, televisions et bien plus. Promotions jusqu'a 40% chez Saffron Electronics.",
+        "discountBadge": "Jusqu'à -40% de remise",
+        "title": "L'électroménager de qualité à Abidjan",
+        "titleHighlight": "de qualité",
+        "subtitle": "Réfrigérateurs, climatiseurs, machines à laver, télévisions et bien plus. Promotions jusqu'à 40% chez Saffron Electronics.",
         "cta": "Voir les produits",
         "ctaPromo": "Promotions en cours",
         "stats": {
@@ -37,22 +37,22 @@
         "openNow": "Ouvert maintenant"
     },
     "categories": {
-        "title": "Nos categories",
-        "subtitle": "Decouvrez notre large gamme de produits",
+        "title": "Nos catégories",
+        "subtitle": "Découvrez notre large gamme de produits",
         "viewAll": "Voir tout",
         "products": "produits",
         "product": "produit"
     },
     "featured": {
         "title": "Produits en vedette",
-        "subtitle": "Notre selection de produits incontournables",
+        "subtitle": "Notre sélection de produits incontournables",
         "viewAll": "Tous les produits",
-        "newTitle": "Nouveautes",
+        "newTitle": "Nouveautés",
         "newSubtitle": "Les derniers arrivages dans notre showroom",
-        "viewAllNew": "Toutes les nouveautes"
+        "viewAllNew": "Toutes les nouveautés"
     },
     "promo": {
-        "badge": "Promotion limitee",
+        "badge": "Promotion limitée",
         "discount": "DE REMISE",
         "viewOffers": "Voir les offres",
         "endsIn": "Fin de l'offre dans",
@@ -66,50 +66,50 @@
         "subtitle": "Saffron Electronics, votre partenaire de confiance depuis plus de 10 ans",
         "original": {
             "title": "Produits originaux",
-            "desc": "Tous nos produits sont garantis originaux avec certificat d'authenticite."
+            "desc": "Tous nos produits sont garantis originaux avec certificat d'authenticité."
         },
         "guarantee": {
             "title": "Garantie constructeur",
-            "desc": "Chaque produit beneficie de la garantie officielle du constructeur."
+            "desc": "Chaque produit bénéficie de la garantie officielle du constructeur."
         },
         "promotions": {
-            "title": "Promotions regulieres",
-            "desc": "Des offres exceptionnelles jusqu'a -40% tout au long de l'annee."
+            "title": "Promotions régulières",
+            "desc": "Des offres exceptionnelles jusqu'à -40% tout au long de l'année."
         },
         "service": {
-            "title": "Service apres vente",
-            "desc": "Notre equipe technique est disponible pour vous accompagner."
+            "title": "Service après vente",
+            "desc": "Notre équipe technique est disponible pour vous accompagner."
         },
         "experience": {
-            "title": "10 ans d'experience",
-            "desc": "Une decennie d'expertise au service des foyers ivoiriens."
+            "title": "10 ans d'expérience",
+            "desc": "Une décennie d'expertise au service des foyers ivoiriens."
         },
         "delivery": {
-            "title": "Livraison a Abidjan",
+            "title": "Livraison à Abidjan",
             "desc": "Service de livraison disponible sur toute la ville d'Abidjan."
         }
     },
     "home": {
         "meta": {
-            "title": "Saffron Electronics CI — Electromenager Abidjan",
-            "description": "Votre specialiste en electromenager a Abidjan. Refrigerateurs, climatiseurs, televisions, machines a laver. Promotions jusqu'a 40%."
+            "title": "Saffron Electronics CI — Électroménager Abidjan",
+            "description": "Votre spécialiste en électroménager à Abidjan. Réfrigérateurs, climatiseurs, télévisions, machines à laver. Promotions jusqu'à 40%."
         },
         "stats": {
             "sectionBadge": "Nos chiffres",
-            "sectionTitleLine1": "La reference",
-            "sectionTitleHighlight": "electromenager",
-            "sectionTitleLine2": "a Abidjan",
-            "experienceLabel": "Annees d'experience",
-            "experienceSub": "Sur le marche ivoirien",
+            "sectionTitleLine1": "La référence",
+            "sectionTitleHighlight": "électroménager",
+            "sectionTitleLine2": "à Abidjan",
+            "experienceLabel": "Années d'expérience",
+            "experienceSub": "Sur le marché ivoirien",
             "clientsLabel": "Clients satisfaits",
-            "clientsSub": "Font confiance a Saffron",
+            "clientsSub": "Font confiance à Saffron",
             "productsLabel": "Produits",
             "productsSub": "En catalogue permanent",
-            "promoLabel": "Jusqu'a -40%",
+            "promoLabel": "Jusqu'à -40%",
             "promoSub": "Sur les promotions actives"
         },
         "contact": {
-            "sectionBadge": "Toujours la",
+            "sectionBadge": "Toujours là",
             "sectionTitle": "Retrouvez-nous",
             "callLink": "Appeler directement",
             "phoneLabel": "Appelez-nous",
@@ -122,12 +122,12 @@
     "contact": {
         "meta": {
             "title": "Contact — Saffron Electronics CI",
-            "description": "Contactez Saffron Electronics a Abidjan. Telephone, email, formulaire de contact et adresse du showroom."
+            "description": "Contactez Saffron Electronics à Abidjan. Téléphone, email, formulaire de contact et adresse du showroom."
         },
         "title": "Contactez-nous",
-        "subtitle": "Notre equipe est disponible pour vous aider",
-        "coordinates": "Nos coordonnees",
-        "phone": "Telephone",
+        "subtitle": "Notre équipe est disponible pour vous aider",
+        "coordinates": "Nos coordonnées",
+        "phone": "Téléphone",
         "email": "Email",
         "address": "Adresse",
         "hours": "Horaires",
@@ -135,7 +135,7 @@
         "sunday": "Dimanche",
         "facebook": "Facebook",
         "formTitle": "Envoyez-nous un message",
-        "formSubtitle": "Remplissez le formulaire et nous vous repondrons dans les meilleurs delais.",
+        "formSubtitle": "Remplissez le formulaire et nous vous répondrons dans les meilleurs délais.",
         "name": "Nom complet",
         "namePlaceholder": "Votre nom",
         "emailPlaceholder": "votre@email.com",
@@ -143,36 +143,36 @@
         "subject": "Sujet",
         "subjectPlaceholder": "Sujet de votre message",
         "message": "Message",
-        "messagePlaceholder": "Decrivez votre demande...",
+        "messagePlaceholder": "Décrivez votre demande...",
         "send": "Envoyer le message",
-        "successTitle": "Message envoye !",
-        "successMsg": "Votre message a ete recu. Nous vous repondrons dans les plus brefs delais.",
+        "successTitle": "Message envoyé !",
+        "successMsg": "Votre message a été reçu. Nous vous répondrons dans les plus brefs délais.",
         "callUs": "Appelez-nous",
         "schedule": "Horaires",
         "scheduleValue": "Lun-Sam 8h-19h, Dim 9h-19h",
-        "heroBadge": "On vous ecoute",
+        "heroBadge": "On vous écoute",
         "heroTitleLine1": "Parlons de",
         "heroTitleHighlight": "votre projet",
-        "heroSubtitle": "Notre equipe est disponible pour repondre a toutes vos questions, 7 jours sur 7.",
-        "cardPhoneLabel": "Telephone",
-        "cardPhoneSub": "Reponse immediate",
+        "heroSubtitle": "Notre équipe est disponible pour répondre à toutes vos questions, 7 jours sur 7.",
+        "cardPhoneLabel": "Téléphone",
+        "cardPhoneSub": "Réponse immédiate",
         "cardEmailLabel": "Email",
-        "cardEmailSub": "Reponse sous 24h",
+        "cardEmailSub": "Réponse sous 24h",
         "cardShowroomLabel": "Showroom",
         "cardShowroomValue": "Riviera Palmeraie",
         "cardHoursLabel": "Horaires",
         "cardHoursValue": "Lun-Sam 8h-19h",
         "cardHoursSub": "Dimanche 9h-19h",
         "writeSectionBadge": "Message",
-        "writeSectionTitle": "Ecrivez-nous",
-        "writeSectionSubtitle": "Nous vous repondrons dans les meilleurs delais.",
+        "writeSectionTitle": "Écrivez-nous",
+        "writeSectionSubtitle": "Nous vous répondrons dans les meilleurs délais.",
         "openNow": "Ouvert maintenant",
         "followUs": "Suivez-nous"
     },
     "products": {
         "meta": {
             "title": "Produits — Saffron Electronics CI",
-            "description": "Catalogue complet d'electromenager : refrigerateurs, climatiseurs, televisions et bien plus."
+            "description": "Catalogue complet d'électroménager : réfrigérateurs, climatiseurs, télévisions et bien plus."
         },
         "shopBadge": "Boutique",
         "title": "Notre catalogue",
@@ -180,20 +180,20 @@
         "results": "produits disponibles",
         "filters": "Filtres",
         "clearFilters": "Effacer",
-        "categories": "Categories",
+        "categories": "Catégories",
         "all": "Toutes",
         "options": "Options",
-        "isNew": "Nouveautes",
+        "isNew": "Nouveautés",
         "isPromo": "En promotion",
         "sortLabel": "Trier par",
-        "sortRecent": "Plus recents",
+        "sortRecent": "Plus récents",
         "sortOldest": "Plus anciens",
         "sortPriceAsc": "Prix croissant",
-        "sortPriceDesc": "Prix decroissant",
-        "noResults": "Aucun produit trouve",
+        "sortPriceDesc": "Prix décroissant",
+        "noResults": "Aucun produit trouvé",
         "noResultsHint": "Essayez de modifier vos filtres",
         "search": "Rechercher un produit...",
-        "viewDetail": "Voir le detail",
+        "viewDetail": "Voir le détail",
         "new": "NOUVEAU",
         "outOfStock": "Rupture",
         "lowStock": "Stock faible",
@@ -202,131 +202,131 @@
     },
     "productDetail": {
         "meta": {
-            "description": "Decouvrez ce produit sur Saffron Electronics CI."
+            "description": "Découvrez ce produit sur Saffron Electronics CI."
         },
         "relatedBadge": "Vous aimerez aussi",
-        "whatsappMessage": "Bonjour, je suis interesse par :",
+        "whatsappMessage": "Bonjour, je suis intéressé par :",
         "whatsappQuestion": "Pouvez-vous me donner plus d'informations ?",
         "back": "Retour aux produits",
         "home": "Accueil",
         "brand": "Marque",
-        "ref": "Ref",
+        "ref": "Réf",
         "callOrder": "Appeler pour commander",
         "whatsapp": "WhatsApp",
         "guarantee": "Garantie constructeur incluse",
-        "original": "Produit original et certifie",
+        "original": "Produit original et certifié",
         "lowStockMsg": "Seulement {{count}} en stock",
         "inShowroom": "Disponible en showroom",
         "description": "Description",
-        "specifications": "Specifications",
+        "specifications": "Spécifications",
         "noDesc": "Aucune description disponible.",
-        "noSpecs": "Aucune specification disponible.",
+        "noSpecs": "Aucune spécification disponible.",
         "related": "Produits similaires",
-        "notFound": "Produit non trouve",
-        "savings": "Vous economisez {{amount}} ({{percent}}%)"
+        "notFound": "Produit non trouvé",
+        "savings": "Vous économisez {{amount}} ({{percent}}%)"
     },
     "promotions": {
         "meta": {
             "title": "Promotions — Saffron Electronics CI",
-            "description": "Decouvrez les promotions en cours chez Saffron Electronics. Jusqu'a 40% de remise sur l'electromenager a Abidjan."
+            "description": "Découvrez les promotions en cours chez Saffron Electronics. Jusqu'à 40% de remise sur l'électroménager à Abidjan."
         },
         "title": "Promotions en cours",
-        "subtitle": "Jusqu'a -40% sur une selection de produits electromenagers",
-        "badge": "Offres limitees",
+        "subtitle": "Jusqu'à -40% sur une sélection de produits électroménagers",
+        "badge": "Offres limitées",
         "campaigns": "Nos promotions",
         "campaignsBadge": "Campagnes",
-        "selectionBadge": "Selection",
+        "selectionBadge": "Sélection",
         "otherOffers": "Autres offres",
         "active": "Active",
         "productSingular": "produit",
         "productsPlural": "produits",
         "onSale": "en promotion",
-        "noProductsCampaign": "Aucun produit associe a cette campagne.",
+        "noProductsCampaign": "Aucun produit associé à cette campagne.",
         "viewAll": "Voir tout",
         "viewAllProducts": "Voir tous les produits",
         "noPromo": "Aucune promotion en cours",
-        "noPromoSub": "Revenez bientot pour decouvrir nos offres.",
+        "noPromoSub": "Revenez bientôt pour découvrir nos offres.",
         "from": "Du",
         "to": "au",
         "productsTitle": "Produits en promotion",
         "endsIn": "Fin de",
         "in": "dans",
-        "heroLine1": "Jusqu'a",
+        "heroLine1": "Jusqu'à",
         "heroHighlight": "-40%",
-        "heroSubtitle": "Sur une selection de refrigerateurs, climatiseurs, televisions et bien plus."
+        "heroSubtitle": "Sur une sélection de réfrigérateurs, climatiseurs, télévisions et bien plus."
     },
     "about": {
         "meta": {
-            "title": "A propos — Saffron Electronics CI",
-            "description": "Decouvrez l'histoire de Saffron Electronics, votre specialiste en electromenager a Abidjan depuis plus de 10 ans."
+            "title": "À propos — Saffron Electronics CI",
+            "description": "Découvrez l'histoire de Saffron Electronics, votre spécialiste en électroménager à Abidjan depuis plus de 10 ans."
         },
         "badge": "Notre histoire",
         "heroLine1": "Plus de",
         "heroHighlight": "10 ans",
-        "heroLine3": "a votre service",
+        "heroLine3": "à votre service",
         "heroSubtitle": {
-            "before": "Saffron Electronics est la reference incontournable de l'electromenager a Abidjan —",
-            "quality": "qualite",
+            "before": "Saffron Electronics est la référence incontournable de l'électroménager à Abidjan —",
+            "quality": "qualité",
             "and1": ", la",
             "trust": "confiance",
             "and2": "et le",
             "service": "service"
         },
-        "scrollHint": "Decouvrir",
+        "scrollHint": "Découvrir",
         "partnerTitleLine1": "Votre partenaire",
         "partnerTitleHighlight": "de confiance",
-        "valuesBadge": "Ce qui nous definit",
-        "timelineTitleLine1": "Une decennie",
+        "valuesBadge": "Ce qui nous définit",
+        "timelineTitleLine1": "Une décennie",
         "timelineTitleLine2": "d'excellence",
         "ctaTitleLine1": "Venez nous rendre",
-        "ctaTitleHighlight": "visite a Abidjan",
-        "title": "Plus de 10 ans a votre service",
-        "subtitle": "Saffron Electronics est ne de la vision de rendre l'electromenager de qualite accessible a tous les foyers ivoiriens.",
-        "experience": "Annees d'experience",
+        "ctaTitleHighlight": "visite à Abidjan",
+        "title": "Plus de 10 ans à votre service",
+        "subtitle": "Saffron Electronics est né de la vision de rendre l'électroménager de qualité accessible à tous les foyers ivoiriens.",
+        "experience": "Années d'expérience",
         "clients": "Clients satisfaits",
         "catalog": "Produits en catalogue",
-        "showroom": "Showroom a Abidjan",
+        "showroom": "Showroom à Abidjan",
         "whoWeAre": "Qui sommes-nous",
-        "partnerTitle": "Votre partenaire electromenager de confiance",
-        "p1": "Fonde il y a plus de 10 ans, Saffron Electronics s'est impose comme l'une des references incontournables de l'electromenager a Abidjan. Notre showroom, situe au Rond-point de la Riviera Palmeraie pres de la BICICI, accueille quotidiennement des centaines de clients qui nous font confiance.",
-        "p2": "Nous proposons une gamme complete d'appareils electromenagers : refrigerateurs, climatiseurs, machines a laver, televisions, et une large selection de petit electromenager. Tous nos produits sont selectionnes aupres des meilleures marques mondiales et beneficient de la garantie constructeur.",
-        "p3": "Notre engagement : vous offrir les meilleurs produits aux meilleurs prix, avec un service client d'exception. Des promotions regulieres jusqu'a 40% de remise viennent renforcer notre accessibilite.",
-        "yearsExp": "Annees d'expertise",
+        "partnerTitle": "Votre partenaire électroménager de confiance",
+        "p1": "Fondé il y a plus de 10 ans, Saffron Electronics s'est imposé comme l'une des références incontournables de l'électroménager à Abidjan. Notre showroom, situé au Rond-point de la Riviera Palmeraie près de la BICICI, accueille quotidiennement des centaines de clients qui nous font confiance.",
+        "p2": "Nous proposons une gamme complète d'appareils électroménagers : réfrigérateurs, climatiseurs, machines à laver, télévisions, et une large sélection de petit électroménager. Tous nos produits sont sélectionnés auprès des meilleures marques mondiales et bénéficient de la garantie constructeur.",
+        "p3": "Notre engagement : vous offrir les meilleurs produits aux meilleurs prix, avec un service client d'exception. Des promotions régulières jusqu'à 40% de remise viennent renforcer notre accessibilité.",
+        "yearsExp": "Années d'expertise",
         "maxDiscount": "Max de remise",
         "open": "Ouvert tous les jours",
         "original": "Produits originaux",
         "checkGuarantee": "Garantie constructeur",
         "checkOriginal": "Produits 100% originaux",
-        "checkDelivery": "Livraison a domicile",
-        "checkAfterSales": "Service apres-vente",
+        "checkDelivery": "Livraison à domicile",
+        "checkAfterSales": "Service après-vente",
         "valuesTitle": "Nos valeurs",
         "valuesSubtitle": "Les principes qui guident chacune de nos actions, chaque jour.",
         "quality": {
-            "title": "Qualite garantie",
+            "title": "Qualité garantie",
             "desc": "Produits originaux des meilleures marques mondiales, avec garantie constructeur sur tous les articles.",
             "tag": "100% original"
         },
         "trust": {
-            "title": "Confiance etablie",
-            "desc": "Plus d'une decennie de service loyal. Reputation fondee sur l'honnetete et la transparence totale.",
+            "title": "Confiance établie",
+            "desc": "Plus d'une décennie de service loyal. Réputation fondée sur l'honnêteté et la transparence totale.",
             "tag": "+5 000 clients"
         },
         "service": {
             "title": "Service complet",
-            "desc": "De l'accueil en showroom au SAV, notre equipe vous accompagne a chaque etape de votre experience.",
+            "desc": "De l'accueil en showroom au SAV, notre équipe vous accompagne à chaque étape de votre expérience.",
             "tag": "7j/7"
         },
         "price": {
             "title": "Prix imbattables",
-            "desc": "Meilleurs tarifs negocies directement avec les fournisseurs. Prix competitifs sans compromis sur la qualite.",
-            "tag": "Jusqu'a -40%"
+            "desc": "Meilleurs tarifs négociés directement avec les fournisseurs. Prix compétitifs sans compromis sur la qualité.",
+            "tag": "Jusqu'à -40%"
         },
         "timelineBadge": "Notre parcours",
-        "timelineTitle": "Une decennie d'excellence",
+        "timelineTitle": "Une décennie d'excellence",
         "timeline": {
             "2013": {
                 "title": "Fondation",
-                "text": "Ouverture du premier point de vente a Abidjan avec une vision claire : democratiser l'acces a l'electromenager de qualite."
+                "text": "Ouverture du premier point de vente à Abidjan avec une vision claire : démocratiser l'accès à l'électroménager de qualité."
             },
             "2016": {
                 "title": "Expansion",
@@ -334,51 +334,51 @@
             },
             "2019": {
                 "title": "Digital",
-                "text": "Lancement de la boutique en ligne pour toucher toute la Cote d'Ivoire et simplifier l'experience d'achat."
+                "text": "Lancement de la boutique en ligne pour toucher toute la Côte d'Ivoire et simplifier l'expérience d'achat."
             },
             "2024": {
                 "title": "Aujourd'hui",
-                "text": "Reference incontournable de l'electromenager a Abidjan avec plus de 5 000 clients fideles."
+                "text": "Référence incontournable de l'électroménager à Abidjan avec plus de 5 000 clients fidèles."
             }
         },
-        "ctaBadge": "Pret a commencer ?",
-        "ctaTitle": "Venez nous rendre visite a Abidjan",
-        "ctaSubtitle": "Showroom ouvert 7j/7 · Rond-point de la Riviera Palmeraie · Conseils personnalises gratuits",
+        "ctaBadge": "Prêt à commencer ?",
+        "ctaTitle": "Venez nous rendre visite à Abidjan",
+        "ctaSubtitle": "Showroom ouvert 7j/7 · Rond-point de la Riviera Palmeraie · Conseils personnalisés gratuits",
         "ctaProducts": "Explorer nos produits",
         "ctaFind": "Nous trouver"
     },
     "contactForm": {
-        "errorName": "Au moins 2 caracteres requis",
+        "errorName": "Au moins 2 caractères requis",
         "errorEmail": "Email invalide",
-        "errorSubject": "Au moins 5 caracteres requis",
-        "errorMessage": "Au moins 20 caracteres requis",
+        "errorSubject": "Au moins 5 caractères requis",
+        "errorMessage": "Au moins 20 caractères requis",
         "sending": "Envoi en cours..."
     },
     "footer": {
         "ctaBadge": "Toujours disponible",
-        "ctaTitleLine1": "Votre projet electromenager",
+        "ctaTitleLine1": "Votre projet électroménager",
         "ctaTitleHighlight": "commence ici.",
         "callNow": "Appeler maintenant",
-        "writeUs": "Nous ecrire",
-        "description": "Votre specialiste en electromenager a Abidjan depuis plus de 10 ans. Qualite, service et prix competitifs.",
+        "writeUs": "Nous écrire",
+        "description": "Votre spécialiste en électroménager à Abidjan depuis plus de 10 ans. Qualité, service et prix compétitifs.",
         "navigation": "Navigation",
         "contact": "Contact",
         "hours": "Horaires",
         "weekdays": "Lun — Sam",
         "sunday": "Dimanche",
         "openNow": "Ouvert maintenant",
-        "openUntil": "7j/7 jusqu'a 19h00",
-        "country": "Cote d'Ivoire",
-        "rights": "Tous droits reserves."
+        "openUntil": "7j/7 jusqu'à 19h00",
+        "country": "Côte d'Ivoire",
+        "rights": "Tous droits réservés."
     },
     "notFound": {
         "title": "Page introuvable",
-        "subtitle": "La page que vous recherchez n'existe pas ou a ete deplacee.",
+        "subtitle": "La page que vous recherchez n'existe pas ou a été déplacée.",
         "home": "Accueil",
         "back": "Retour"
     },
     "language": {
-        "fr": "Francais",
+        "fr": "Français",
         "en": "English"
     }
 }

@@ -9,12 +9,12 @@ import type { Product } from '@/types/product.types'
 interface FeaturedProductsProps {
   title: string
   subtitle?: string
-  label?: string         // optional eyebrow text passed to SectionHeader
+  label?: string         
   products: Product[]
   isLoading?: boolean
   viewAllLink?: string
   viewAllLabel?: string
-  dark?: boolean         // dark section variant
+  dark?: boolean        
 }
 
 // Skeleton with moving shimmer

@@ -142,18 +142,36 @@ export const Hero: React.FC = () => {
   const { t } = useTranslation()
   const { data: categories, isLoading } = useCategories()
   const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null)
+  // Index de départ dans le tableau complet des catégories
+  const [pageOffset, setPageOffset] = useState(0)
 
   useEffect(() => {
     if (!categories?.length) return
-    const count = Math.min(categories.length, 4)
-    let current = 0
-    const cycle = () => { setHighlightedIndex(current); current = (current + 1) % count }
+    const total = categories.length
+    const visibleCount = Math.min(total, 4)
+    let slot = 0 // quel slot parmi les 4 visibles est en surbrillance
+
+    const cycle = () => {
+      setHighlightedIndex(slot)
+      slot = (slot + 1) % visibleCount
+
+      // Quand on a parcouru tous les slots visibles, on avance de 4 dans la liste
+      if (slot === 0 && total > 4) {
+        setPageOffset((prev) => (prev + 4) % total)
+      }
+    }
+
     cycle()
     const id = setInterval(cycle, 1800)
     return () => clearInterval(id)
   }, [categories])
 
-  const displayedCategories = categories?.slice(0, 4) ?? []
+  // Les 4 catégories actuellement affichées (avec wrapping circulaire)
+  const displayedCategories = (() => {
+    if (!categories?.length) return []
+    const total = categories.length
+    return [0, 1, 2, 3].map((i) => categories[(pageOffset + i) % total])
+  })()
 
   return (
     <section className="relative bg-white overflow-hidden min-h-screen flex items-center">
@@ -238,15 +256,32 @@ export const Hero: React.FC = () => {
           <div className="relative hidden lg:flex items-center justify-center">
             <div className="absolute w-80 h-80 rounded-full bg-gradient-to-br from-amber-300/18 to-orange-400/12 blur-2xl pointer-events-none" />
 
-            {!isLoading && displayedCategories.length > 0 && (
+            {/* Dots — un par catégorie, groupe actif en orange */}
+            {!isLoading && categories && categories.length > 0 && (
               <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
-                {displayedCategories.map((_, i) => (
-                  <motion.div key={i} animate={{ width: highlightedIndex === i ? 24 : 6, backgroundColor: highlightedIndex === i ? '#f97316' : '#e5e7eb' }} transition={{ duration: 0.4 }} className="h-1.5 rounded-full" />
-                ))}
+                {categories.map((_, i) => {
+                  const isActive = i >= pageOffset && i < pageOffset + 4
+                  return (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        width: isActive ? 16 : 6,
+                        backgroundColor: isActive ? '#f97316' : '#e5e7eb',
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="h-1.5 rounded-full"
+                    />
+                  )
+                })}
               </div>
             )}
 
-            <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15, delayChildren: 0.45 } } }} className="grid grid-cols-2 gap-4 relative z-10">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15, delayChildren: 0.45 } } }}
+              className="grid grid-cols-2 gap-4 relative z-10"
+            >
               {isLoading
                 ? [...Array(4)].map((_, i) => (
                     <motion.div key={i} variants={{ hidden: { opacity: 0, scale: 0.78, y: 24 }, visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.65, ease: [0.34, 1.56, 0.64, 1] } } }}>
@@ -258,11 +293,23 @@ export const Hero: React.FC = () => {
                     </motion.div>
                   ))
                 : displayedCategories.map((cat, i) => (
-                    <motion.div key={cat.id} variants={{ hidden: { opacity: 0, scale: 0.78, y: 24 }, visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.65, ease: [0.34, 1.56, 0.64, 1] } } }}>
-                      <Link to={`/products?category=${cat.slug}`}>
-                        <CategoryCard category={cat} colorIndex={i} floatDelay={i} isHighlighted={highlightedIndex === i} />
-                      </Link>
-                    </motion.div>
+                    <AnimatePresence key={`${pageOffset}-${i}`} mode="wait">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.88, y: 16 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.88, y: -16 }}
+                        transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1], delay: i * 0.06 }}
+                      >
+                        <Link to={`/products?category=${cat.slug}`}>
+                          <CategoryCard
+                            category={cat}
+                            colorIndex={i}
+                            floatDelay={i}
+                            isHighlighted={highlightedIndex === i}
+                          />
+                        </Link>
+                      </motion.div>
+                    </AnimatePresence>
                   ))
               }
             </motion.div>
